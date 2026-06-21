@@ -1,1 +1,1132 @@
-Cycling_Club_Bike_Tour_Organizer
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VeloMax | Premium Cycling Club & Adventure Bike Tours</title>
+  <meta name="description" content="Discover premium road cycling, mountain bike adventures, and club memberships with VeloMax. Explore global scenic tours and professional coaching.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VeloMax | Premium Cycling Club & Adventure Bike Tours">
+  <meta property="og:description" content="Experience premium cycling tours, high-performance coaching, and a vibrant community. Join VeloMax today.">
+  <meta property="og:image" content="assets/images/hero_road_cyclist.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VeloMax | Premium Cycling Club & Adventure Bike Tours">
+  <meta name="twitter:description" content="Experience premium cycling tours, high-performance coaching, and a vibrant community. Join VeloMax today.">
+
+  <!-- Fonts & Styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Library CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="sr-only-focusable py-2 px-3 border bg-body text-primary position-absolute">Skip to main content</a>
+
+  <!-- Header Navigation -->
+  <header class="navbar navbar-expand-lg sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i data-lucide="bike" class="me-2 text-primary"></i>
+        <span>Velo</span>Max
+      </a>
+      
+      <!-- Navigation Menu links (Desktop) -->
+      <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav align-items-center me-4">
+          <!-- Multi-Home Toggle Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu bg-body border-0 shadow-lg p-2" aria-labelledby="homeDropdown" style="border-radius: var(--border-radius-sm);">
+              <li><a class="dropdown-item rounded py-2 small" href="index.html">Home 1: Classic Club</a></li>
+              <li><a class="dropdown-item rounded py-2 small" href="index2.html">Home 2: Wilderness Tour</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="membership.html" class="btn btn-premium">Join Club</a>
+          <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-right-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Right Utilities -->
+      <div class="d-flex d-lg-none align-items-center gap-2">
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="offcanvas-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <button id="theme-toggle-mob" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="lang-toggle-mob" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+          <i data-lucide="arrow-right-left"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu Overlay -->
+  <div id="offcanvas-overlay" class="offcanvas-overlay"></div>
+  <div id="offcanvas-menu" class="offcanvas-menu" role="dialog" aria-modal="true" aria-label="Main Menu">
+    <nav class="d-flex flex-column">
+      <a href="index.html" class="offcanvas-link active">Home 1: Classic Club</a>
+      <a href="index2.html" class="offcanvas-link">Home 2: Wilderness Tour</a>
+      <a href="about.html" class="offcanvas-link">About</a>
+      <a href="tours.html" class="offcanvas-link">Cycling Tours</a>
+      <a href="membership.html" class="offcanvas-link">Club Membership</a>
+      <a href="training.html" class="offcanvas-link">Coaching & Training</a>
+      <a href="gallery.html" class="offcanvas-link">Gallery</a>
+      <a href="contact.html" class="offcanvas-link">Contact</a>
+    </nav>
+    <div class="mt-auto d-flex flex-column gap-3">
+      <a href="membership.html" class="btn btn-premium w-100">Join Club</a>
+      <a href="tours.html" class="btn btn-premium-outline w-100">Book Tour</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    
+    <!-- Hero Banner -->
+    <section class="hero-section text-white d-flex align-items-center">
+      <div class="hero-bg" style="background-image: url('assets/images/hero_road_cyclist.png');"></div>
+      <div class="hero-overlay"></div>
+      <div class="container position-relative z-1">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7 text-start">
+            <span class="badge bg-primary px-3 py-2 text-uppercase mb-3 hero-reveal-fade">International Cycling Community</span>
+            <h1 class="display-3 mb-4 animate-split-text">Forge Your Path. Embrace The Ride.</h1>
+            <p class="lead-text mb-5 text-light opacity-90 hero-reveal-fade">Experience global award-winning cycling tours, professional coaching support, and a high-performance local network designed for riders seeking excellence.</p>
+            <div class="d-flex gap-3 flex-wrap hero-reveal-fade">
+              <a href="membership.html" class="btn btn-premium">Join Club</a>
+              <a href="tours.html" class="btn btn-premium-outline text-white border-white">Book Tour</a>
+            </div>
+          </div>
+          <div class="col-lg-5 hero-reveal-fade">
+            <!-- Floating Statistics -->
+            <div class="glass-panel p-4 floating-element position-relative text-white border-0">
+              <div class="row g-4">
+                <div class="col-6">
+                  <div class="hero-stats">
+                    <h3 class="stat-counter display-6 mb-0 text-primary" data-target="1500">0</h3>
+                    <span class="text-light small">Active Members</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="hero-stats">
+                    <h3 class="stat-counter display-6 mb-0 text-primary" data-target="45">0</h3>
+                    <span class="text-light small">Scenic Routes</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="hero-stats">
+                    <h3 class="stat-counter display-6 mb-0 text-primary" data-target="320">0</h3>
+                    <span class="text-light small">Tours Organized</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="hero-stats">
+                    <h3 class="stat-counter display-6 mb-0 text-primary" data-target="15">0</h3>
+                    <span class="text-light small">Elite Coaches</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Club Introduction -->
+    <section class="py-5 my-md-5">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&q=80" alt="VeloMax cyclists on route" class="img-fluid rounded-4 shadow-lg">
+              <div class="position-absolute bottom-0 end-0 bg-primary text-white p-4 rounded-4 translate-middle-y me-4 d-none d-sm-block shadow-lg">
+                <h4 class="mb-1">EST. 2012</h4>
+                <p class="mb-0 small">Over a decade of legacy</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <span class="text-primary text-uppercase font-weight-550">Who We Are</span>
+            <h2 class="display-5 mt-2 mb-4">A Global Community of Passionate Cyclists</h2>
+            <p class="lead-text mb-4 text-muted">VeloMax is an elite cycling network bringing together riders of all backgrounds. From premium mountain climbs to weekend family rides, we foster progress, safety, and exploration.</p>
+            <div class="row g-4 mb-4">
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <div class="bg-primary-subtle text-primary p-2 rounded-circle me-3">
+                    <i data-lucide="target" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Our Mission</h5>
+                    <span class="text-muted small">Deliver premium cycling challenges and build lifelong healthy riding habits.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <div class="bg-primary-subtle text-primary p-2 rounded-circle me-3">
+                    <i data-lucide="eye" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Our Vision</h5>
+                    <span class="text-muted small">Be the globally recognized home for authentic adventure tours and coach networks.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="about.html" class="btn btn-premium-outline">Explore Our History</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Cycling Tours -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Guided Expeditions</span>
+          <h2 class="display-5 mt-2 mb-3">Featured Cycling Tours</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Explore our carefully planned guided routes with supportive team leaders and elite logistics.</p>
+        </div>
+        
+        <div class="row g-4 justify-content-center staggered-grid">
+          <!-- Card 1: Road Cycling -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" alt="Road Cycling Tour" class="premium-card-img">
+                <span class="badge bg-dark text-white position-absolute top-0 end-0 m-3 px-3 py-2 font-weight-520">Road Cycling</span>
+              </div>
+              <div class="premium-card-body">
+                <div class="d-flex justify-content-between mb-2 equal-card-meta">
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="clock" class="me-1 w-4 h-4"></i> 5 Days</span>
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="activity" class="me-1 w-4 h-4 text-warning"></i> Advanced</span>
+                </div>
+                <h4 class="equal-card-header mb-2">Alpine Ridge Road Tour</h4>
+                <p class="text-muted small equal-card-desc mb-3">Conquer steep paved serpentines and experience high-elevation breath-taking horizons across global passes.</p>
+                <div class="premium-card-footer d-flex justify-content-between align-items-center mt-auto">
+                  <div>
+                    <span class="text-muted small d-block">Distance</span>
+                    <strong class="text-dark">450 km</strong>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-muted small d-block">Price</span>
+                    <strong class="text-primary font-weight-600">$1,299</strong>
+                  </div>
+                </div>
+                <a href="tours.html" class="btn btn-premium w-100 mt-3">Book Tour</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: MTB -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card">
+              <div class="premium-card-img-wrapper">
+                <img src="assets/images/hero_mountain_biker.png" alt="Mountain Adventure Tour" class="premium-card-img">
+                <span class="badge bg-dark text-white position-absolute top-0 end-0 m-3 px-3 py-2 font-weight-520">Mountain Bike</span>
+              </div>
+              <div class="premium-card-body">
+                <div class="d-flex justify-content-between mb-2 equal-card-meta">
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="clock" class="me-1 w-4 h-4"></i> 3 Days</span>
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="activity" class="me-1 w-4 h-4 text-danger"></i> Expert</span>
+                </div>
+                <h4 class="equal-card-header mb-2">Red Canyon MTB Epic</h4>
+                <p class="text-muted small equal-card-desc mb-3">Navigate singletracks, drops, and dusty slickrock canyons on our ultimate MTB expedition.</p>
+                <div class="premium-card-footer d-flex justify-content-between align-items-center mt-auto">
+                  <div>
+                    <span class="text-muted small d-block">Distance</span>
+                    <strong class="text-dark">180 km</strong>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-muted small d-block">Price</span>
+                    <strong class="text-primary font-weight-600">$899</strong>
+                  </div>
+                </div>
+                <a href="tours.html" class="btn btn-premium w-100 mt-3">Book Tour</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Weekend Ride -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80" alt="Weekend Ride" class="premium-card-img">
+                <span class="badge bg-dark text-white position-absolute top-0 end-0 m-3 px-3 py-2 font-weight-520">Gravel / Weekend</span>
+              </div>
+              <div class="premium-card-body">
+                <div class="d-flex justify-content-between mb-2 equal-card-meta">
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="clock" class="me-1 w-4 h-4"></i> 1 Day</span>
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="activity" class="me-1 w-4 h-4 text-success"></i> Intermediate</span>
+                </div>
+                <h4 class="equal-card-header mb-2">Coastal Gravel Escapade</h4>
+                <p class="text-muted small equal-card-desc mb-3">Ride through mixed coastlines and gravel pathways. Ideal for exploring natural views and local food.</p>
+                <div class="premium-card-footer d-flex justify-content-between align-items-center mt-auto">
+                  <div>
+                    <span class="text-muted small d-block">Distance</span>
+                    <strong class="text-dark">85 km</strong>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-muted small d-block">Price</span>
+                    <strong class="text-primary font-weight-600">$150</strong>
+                  </div>
+                </div>
+                <a href="tours.html" class="btn btn-premium w-100 mt-3">Book Tour</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Family Ride -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=800&q=80" alt="Family Cycling Tour" class="premium-card-img">
+                <span class="badge bg-dark text-white position-absolute top-0 end-0 m-3 px-3 py-2 font-weight-520">Family Friendly</span>
+              </div>
+              <div class="premium-card-body">
+                <div class="d-flex justify-content-between mb-2 equal-card-meta">
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="clock" class="me-1 w-4 h-4"></i> 4 Hours</span>
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="activity" class="me-1 w-4 h-4 text-success"></i> Beginner</span>
+                </div>
+                <h4 class="equal-card-header mb-2">Green Valley Picnic Cruise</h4>
+                <p class="text-muted small equal-card-desc mb-3">A flat, safe pathway tour through organic parklands. Includes custom lunch stopovers and bike setups.</p>
+                <div class="premium-card-footer d-flex justify-content-between align-items-center mt-auto">
+                  <div>
+                    <span class="text-muted small d-block">Distance</span>
+                    <strong class="text-dark">25 km</strong>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-muted small d-block">Price</span>
+                    <strong class="text-primary font-weight-600">$85</strong>
+                  </div>
+                </div>
+                <a href="tours.html" class="btn btn-premium w-100 mt-3">Book Tour</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Sunrise Ride -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80" alt="Sunrise Ride" class="premium-card-img">
+                <span class="badge bg-dark text-white position-absolute top-0 end-0 m-3 px-3 py-2 font-weight-520">Special Event</span>
+              </div>
+              <div class="premium-card-body">
+                <div class="d-flex justify-content-between mb-2 equal-card-meta">
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="clock" class="me-1 w-4 h-4"></i> 3 Hours</span>
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="activity" class="me-1 w-4 h-4 text-success"></i> Intermediate</span>
+                </div>
+                <h4 class="equal-card-header mb-2">Sunrise Ocean Highway Climb</h4>
+                <p class="text-muted small equal-card-desc mb-3">Watch the dawn unfold over ocean coastlines as we cycle along empty scenic highways. Coffee included.</p>
+                <div class="premium-card-footer d-flex justify-content-between align-items-center mt-auto">
+                  <div>
+                    <span class="text-muted small d-block">Distance</span>
+                    <strong class="text-dark">60 km</strong>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-muted small d-block">Price</span>
+                    <strong class="text-primary font-weight-600">$75</strong>
+                  </div>
+                </div>
+                <a href="tours.html" class="btn btn-premium w-100 mt-3">Book Tour</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Endurance Challenge -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&q=80" alt="Endurance Challenge" class="premium-card-img">
+                <span class="badge bg-dark text-white position-absolute top-0 end-0 m-3 px-3 py-2 font-weight-520">Extreme</span>
+              </div>
+              <div class="premium-card-body">
+                <div class="d-flex justify-content-between mb-2 equal-card-meta">
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="clock" class="me-1 w-4 h-4"></i> 7 Days</span>
+                  <span class="text-muted small d-flex align-items-center"><i data-lucide="activity" class="me-1 w-4 h-4 text-danger"></i> Elite</span>
+                </div>
+                <h4 class="equal-card-header mb-2">Continental Pass Challenge</h4>
+                <p class="text-muted small equal-card-desc mb-3">Our premium endurance experience crossing 3 separate mountain ranges. Dedicated support vehicles provided.</p>
+                <div class="premium-card-footer d-flex justify-content-between align-items-center mt-auto">
+                  <div>
+                    <span class="text-muted small d-block">Distance</span>
+                    <strong class="text-dark">920 km</strong>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-muted small d-block">Price</span>
+                    <strong class="text-primary font-weight-600">$2,450</strong>
+                  </div>
+                </div>
+                <a href="tours.html" class="btn btn-premium w-100 mt-3">Book Tour</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Highlights -->
+    <section class="py-5 my-md-5">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Club Privileges</span>
+          <h2 class="display-5 mt-2 mb-3">Why Join VeloMax?</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Unlock elite gear, coaching discounts, curated routes, and a global active network of supportive cycling enthusiasts.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="glass-panel p-4 h-100 border-0 shadow-sm text-start">
+              <div class="bg-primary-subtle text-primary p-3 rounded-4 d-inline-block mb-4">
+                <i data-lucide="users" class="w-8 h-8"></i>
+              </div>
+              <h4 class="mb-3">Weekly Club Rides</h4>
+              <p class="text-muted small mb-0">Join organized group rides matching every fitness level. Safely escorted by certified leaders.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="glass-panel p-4 h-100 border-0 shadow-sm text-start">
+              <div class="bg-primary-subtle text-primary p-3 rounded-4 d-inline-block mb-4">
+                <i data-lucide="percent" class="w-8 h-8"></i>
+              </div>
+              <h4 class="mb-3">Exclusive Store Discounts</h4>
+              <p class="text-muted small mb-0">Enjoy 15-25% off high-end carbon bike parts, helmets, cycling apparel, and partner brands.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="glass-panel p-4 h-100 border-0 shadow-sm text-start">
+              <div class="bg-primary-subtle text-primary p-3 rounded-4 d-inline-block mb-4">
+                <i data-lucide="calendar" class="w-8 h-8"></i>
+              </div>
+              <h4 class="mb-3">VeloMax Race Access</h4>
+              <p class="text-muted small mb-0">Priority registration and free entry tickets to major local crit races and gran fondos.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="glass-panel p-4 h-100 border-0 shadow-sm text-start">
+              <div class="bg-primary-subtle text-primary p-3 rounded-4 d-inline-block mb-4">
+                <i data-lucide="award" class="w-8 h-8"></i>
+              </div>
+              <h4 class="mb-3">Professional Coaching</h4>
+              <p class="text-muted small mb-0">Direct training consultation and individual performance plans created by elite UCI coaches.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+            <div class="glass-panel p-4 h-100 border-0 shadow-sm text-start">
+              <div class="bg-primary-subtle text-primary p-3 rounded-4 d-inline-block mb-4">
+                <i data-lucide="bike" class="w-8 h-8"></i>
+              </div>
+              <h4 class="mb-3">Premium Rental Priority</h4>
+              <p class="text-muted small mb-0">Instant reservations on high-end carbon road bikes and full-suspension MTBs for weekend tours.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+            <div class="glass-panel p-4 h-100 border-0 shadow-sm text-start">
+              <div class="bg-primary-subtle text-primary p-3 rounded-4 d-inline-block mb-4">
+                <i data-lucide="globe" class="w-8 h-8"></i>
+              </div>
+              <h4 class="mb-3">Global Community Hub</h4>
+              <p class="text-muted small mb-0">Connect via Discord, share GPS tracks, join monthly meetups, and plan self-guided routes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training Programs -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Improve Your Performance</span>
+          <h2 class="display-5 mt-2 mb-3">Structured Training Programs</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Unlock professional performance coaching designed for beginners, endurance riders, and racers alike.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center staggered-grid">
+          <!-- beginner -->
+          <div class="col-lg-3 col-md-6 staggered-item">
+            <div class="premium-card">
+              <div class="premium-card-body d-flex flex-column h-100 text-start">
+                <span class="badge bg-success-subtle text-success border border-success-subtle mb-3 align-self-start py-1 px-3">Beginner</span>
+                <h4 class="mb-3">Foundational Cycling Skills</h4>
+                <p class="text-muted small flex-grow-1 mb-4">Master group cycling communication, climbing cadences, safe road cycling, and flat repair basics.</p>
+                <div class="border-top pt-3 mt-auto">
+                  <div class="d-flex justify-content-between text-muted small mb-2">
+                    <span>Coach</span>
+                    <strong class="text-dark">Sarah Jenkins</strong>
+                  </div>
+                  <div class="d-flex justify-content-between text-muted small">
+                    <span>Duration</span>
+                    <strong class="text-dark">4 Weeks (2x/wk)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Intermediate -->
+          <div class="col-lg-3 col-md-6 staggered-item">
+            <div class="premium-card">
+              <div class="premium-card-body d-flex flex-column h-100 text-start">
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle mb-3 align-self-start py-1 px-3">Intermediate</span>
+                <h4 class="mb-3">Climbing & Elevation Mastery</h4>
+                <p class="text-muted small flex-grow-1 mb-4">Improve power-to-weight performance, gear management, pacing strategies, and descending confidence.</p>
+                <div class="border-top pt-3 mt-auto">
+                  <div class="d-flex justify-content-between text-muted small mb-2">
+                    <span>Coach</span>
+                    <strong class="text-dark">Marcello Rossi</strong>
+                  </div>
+                  <div class="d-flex justify-content-between text-muted small">
+                    <span>Duration</span>
+                    <strong class="text-dark">6 Weeks (3x/wk)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Advanced -->
+          <div class="col-lg-3 col-md-6 staggered-item">
+            <div class="premium-card">
+              <div class="premium-card-body d-flex flex-column h-100 text-start">
+                <span class="badge bg-warning-subtle text-warning border border-warning-subtle mb-3 align-self-start py-1 px-3">Advanced</span>
+                <h4 class="mb-3">Endurance Base Development</h4>
+                <p class="text-muted small flex-grow-1 mb-4">Targeted Zone 2 aerobic pacing, metrics analysis (FTP, normalized power), and long tour fueling strategies.</p>
+                <div class="border-top pt-3 mt-auto">
+                  <div class="d-flex justify-content-between text-muted small mb-2">
+                    <span>Coach</span>
+                    <strong class="text-dark">Sarah Jenkins</strong>
+                  </div>
+                  <div class="d-flex justify-content-between text-muted small">
+                    <span>Duration</span>
+                    <strong class="text-dark">8 Weeks (4x/wk)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Race Prep -->
+          <div class="col-lg-3 col-md-6 staggered-item">
+            <div class="premium-card">
+              <div class="premium-card-body d-flex flex-column h-100 text-start">
+                <span class="badge bg-danger-subtle text-danger border border-danger-subtle mb-3 align-self-start py-1 px-3">Racing</span>
+                <h4 class="mb-3">Crit & Road Race Preparation</h4>
+                <p class="text-muted small flex-grow-1 mb-4">High-intensity interval training, sprinting power, tactical positioning, and race simulation drills.</p>
+                <div class="border-top pt-3 mt-auto">
+                  <div class="d-flex justify-content-between text-muted small mb-2">
+                    <span>Coach</span>
+                    <strong class="text-dark">Alex Dupont</strong>
+                  </div>
+                  <div class="d-flex justify-content-between text-muted small">
+                    <span>Duration</span>
+                    <strong class="text-dark">12 Weeks (5x/wk)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="training.html" class="btn btn-premium">View Training Schedules</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bike Rental Preview -->
+    <section class="py-5 my-md-5">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Elite Equipment</span>
+          <h2 class="display-5 mt-2 mb-3">Premium Fleet Rental</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Don't worry about packing your bike. Reserve from our selection of carbon frames, disc brakes, and electronics.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- road -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="premium-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1544192240-4a34fed0104c?auto=format&fit=crop&w=800&q=80" alt="Road Bike Rental" class="premium-card-img">
+              </div>
+              <div class="premium-card-body text-start">
+                <h4 class="mb-2">Carbon Road Bike</h4>
+                <p class="text-muted small mb-3">Specialized Tarmac SL7 with Shimano Ultegra Di2 groupset. Fast, aerodynamic, disc brakes.</p>
+                <div class="border-top pt-3 d-flex justify-content-between align-items-center mt-auto">
+                  <div>
+                    <span class="text-muted small d-block">Frame Weight</span>
+                    <strong class="text-dark">7.4 kg</strong>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-muted small d-block">Rate</span>
+                    <strong class="text-primary">$75 / day</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- MTB -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="premium-card">
+              <div class="premium-card-img-wrapper">
+                <img src="assets/images/hero_mountain_biker.png" alt="Mountain Bike Rental" class="premium-card-img">
+              </div>
+              <div class="premium-card-body text-start">
+                <h4 class="mb-2">Full-Suspension MTB</h4>
+                <p class="text-muted small mb-3">Santa Cruz Tallboy Carbon CC. Fox Float shock, SRAM GX Eagle 12-speed setup.</p>
+                <div class="border-top pt-3 d-flex justify-content-between align-items-center mt-auto">
+                  <div>
+                    <span class="text-muted small d-block">Suspension</span>
+                    <strong class="text-dark">120mm travel</strong>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-muted small d-block">Rate</span>
+                    <strong class="text-primary">$85 / day</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Hybrid -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="premium-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=800&q=80" alt="Hybrid Bike Rental" class="premium-card-img">
+              </div>
+              <div class="premium-card-body text-start">
+                <h4 class="mb-2">Urban Hybrid Cruise</h4>
+                <p class="text-muted small mb-3">Trek FX Sport Carbon. Flat-bar speed with comfortable upright ergonomics and rack support.</p>
+                <div class="border-top pt-3 d-flex justify-content-between align-items-center mt-auto">
+                  <div>
+                    <span class="text-muted small d-block">Gears</span>
+                    <strong class="text-dark">1x11 Shimano</strong>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-muted small d-block">Rate</span>
+                    <strong class="text-primary">$45 / day</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- E-Bike -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="premium-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80" alt="E-Bike Rental" class="premium-card-img">
+              </div>
+              <div class="premium-card-body text-start">
+                <h4 class="mb-2">Electric Road Assistant</h4>
+                <p class="text-muted small mb-3">Specialized Creo SL. Lightweight mid-drive motor providing smooth pedal assistance.</p>
+                <div class="border-top pt-3 d-flex justify-content-between align-items-center mt-auto">
+                  <div>
+                    <span class="text-muted small d-block">Range</span>
+                    <strong class="text-dark">Up to 130 km</strong>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-muted small d-block">Rate</span>
+                    <strong class="text-primary">$95 / day</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="tours.html#equipment" class="btn btn-premium-outline">View Bike Sizing Details</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Calendar</span>
+          <h2 class="display-5 mt-2 mb-3">Upcoming Club Events</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Save the date! Join us for community events, training modules, and social meetups.</p>
+        </div>
+
+        <div class="timeline text-start">
+          <!-- Event 1 -->
+          <div class="timeline-item d-md-flex align-items-center" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-primary font-weight-550 small d-block mb-1">June 24, 2026</span>
+              <h4 class="mb-2">Summer Gran Fondo Warm-Up</h4>
+              <p class="text-muted small mb-3">A supportive 120km group ride checking our pace for the major summer Gran Fondo. Structured support zones included.</p>
+              <div class="d-flex gap-3 text-muted small">
+                <span class="d-flex align-items-center"><i data-lucide="map-pin" class="w-4 h-4 me-1"></i> West Gate Hub</span>
+                <span class="d-flex align-items-center"><i data-lucide="activity" class="w-4 h-4 me-1 text-warning"></i> Advanced</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="timeline-item d-md-flex align-items-center" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-primary font-weight-550 small d-block mb-1">July 05, 2026</span>
+              <h4 class="mb-2">VeloMax MTB Skills Clinic</h4>
+              <p class="text-muted small mb-3">Practical trail workshop detailing descending braking controls, body positioning, and rock garden navigation.</p>
+              <div class="d-flex gap-3 text-muted small">
+                <span class="d-flex align-items-center"><i data-lucide="map-pin" class="w-4 h-4 me-1"></i> Apex Mountain Lodge</span>
+                <span class="d-flex align-items-center"><i data-lucide="activity" class="w-4 h-4 me-1 text-success"></i> Intermediate</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="timeline-item d-md-flex align-items-center" data-aos="fade-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="text-primary font-weight-550 small d-block mb-1">July 18, 2026</span>
+              <h4 class="mb-2">Kids Safety & Skills Ride</h4>
+              <p class="text-muted small mb-3">Fun, closed-course layout with fun cycling games to teach safety rules and build hand-eye coordination.</p>
+              <div class="d-flex gap-3 text-muted small">
+                <span class="d-flex align-items-center"><i data-lucide="map-pin" class="w-4 h-4 me-1"></i> City Park Oval</span>
+                <span class="d-flex align-items-center"><i data-lucide="activity" class="w-4 h-4 me-1 text-success"></i> Beginner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Ride Leaders -->
+    <section class="py-5 my-md-5">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Elite Guides</span>
+          <h2 class="display-5 mt-2 mb-3">Meet Our Ride Leaders</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Our leaders are first-aid certified, route masters, and seasoned competitive cycling riders.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Leader 1 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="premium-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Sarah Jenkins" class="premium-card-img">
+              </div>
+              <div class="premium-card-body text-start">
+                <h4 class="mb-1">Sarah Jenkins</h4>
+                <span class="text-primary small d-block mb-3">Head of Road Cycling</span>
+                <p class="text-muted small mb-4">Former national team rider. 12+ years organizing international road cycling events. Certified UCI Coach.</p>
+                <div class="border-top pt-3 d-flex flex-wrap gap-2 mt-auto">
+                  <span class="badge bg-light text-muted small">First Aid</span>
+                  <span class="badge bg-light text-muted small">UCI Level 2</span>
+                  <span class="badge bg-light text-muted small">150k+ Ride Miles</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Leader 2 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="premium-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Marcello Rossi" class="premium-card-img">
+              </div>
+              <div class="premium-card-body text-start">
+                <h4 class="mb-1">Marcello Rossi</h4>
+                <span class="text-primary small d-block mb-3">MTB Lead Guide</span>
+                <p class="text-muted small mb-4">Born in the Alps. Mountain trail designer with extensive terrain experience. Emergency Wilderness Medic.</p>
+                <div class="border-top pt-3 d-flex flex-wrap gap-2 mt-auto">
+                  <span class="badge bg-light text-muted small">WFR Medic</span>
+                  <span class="badge bg-light text-muted small">Route Designer</span>
+                  <span class="badge bg-light text-muted small">GPS Expert</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Leader 3 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="premium-card">
+              <div class="premium-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Alex Dupont" class="premium-card-img">
+              </div>
+              <div class="premium-card-body text-start">
+                <h4 class="mb-1">Alex Dupont</h4>
+                <span class="text-primary small d-block mb-3">Coaching Coordinator</span>
+                <p class="text-muted small mb-4">Masters in Sports Science. Expert in power-meter analytics, biomechanics, and recovery protocols.</p>
+                <div class="border-top pt-3 d-flex flex-wrap gap-2 mt-auto">
+                  <span class="badge bg-light text-muted small">M.Sc. Kinesiology</span>
+                  <span class="badge bg-light text-muted small">FTP Specialist</span>
+                  <span class="badge bg-light text-muted small">UCI Level 3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cycling Routes -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Local Guides</span>
+          <h2 class="display-5 mt-2 mb-3">Popular Cycling Routes</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Challenge yourself on some of our famous locally mapped segments. Download GPX maps instantly.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Route 1 -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="premium-card p-4 text-start">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="mb-0">VeloMax Coastal Loop</h4>
+                <span class="badge bg-success-subtle text-success">Intermediate</span>
+              </div>
+              <div class="d-flex justify-content-around bg-light rounded p-3 mb-4 text-center">
+                <div>
+                  <span class="text-muted small d-block">Distance</span>
+                  <strong class="text-dark">72 km</strong>
+                </div>
+                <div>
+                  <span class="text-muted small d-block">Elevation</span>
+                  <strong class="text-dark">340 m</strong>
+                </div>
+                <div>
+                  <span class="text-muted small d-block">Terrain</span>
+                  <strong class="text-dark">Asphalt</strong>
+                </div>
+              </div>
+              <p class="text-muted small mb-4">A fast, coastal highway route with gentle rolling hills. Ideal for group pacing practices and coffee spins.</p>
+              <a href="#" class="btn btn-premium-outline w-100 d-flex align-items-center justify-content-center">
+                <i data-lucide="download" class="me-2 w-4 h-4"></i> Download GPX File
+              </a>
+            </div>
+          </div>
+          <!-- Route 2 -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="premium-card p-4 text-start">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="mb-0">Apex Summit Challenge</h4>
+                <span class="badge bg-danger-subtle text-danger">Expert</span>
+              </div>
+              <div class="d-flex justify-content-around bg-light rounded p-3 mb-4 text-center">
+                <div>
+                  <span class="text-muted small d-block">Distance</span>
+                  <strong class="text-dark">112 km</strong>
+                </div>
+                <div>
+                  <span class="text-muted small d-block">Elevation</span>
+                  <strong class="text-dark">1,890 m</strong>
+                </div>
+                <div>
+                  <span class="text-muted small d-block">Terrain</span>
+                  <strong class="text-dark">Mountain Paved</strong>
+                </div>
+              </div>
+              <p class="text-muted small mb-4">A mountain epic climbing our signature peak. The climb reaches average gradients of 7.5% over 15 kilometers.</p>
+              <a href="#" class="btn btn-premium-outline w-100 d-flex align-items-center justify-content-center">
+                <i data-lucide="download" class="me-2 w-4 h-4"></i> Download GPX File
+              </a>
+            </div>
+          </div>
+          <!-- Route 3 -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="premium-card p-4 text-start">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="mb-0">Red Rock Wilderness Path</h4>
+                <span class="badge bg-warning-subtle text-warning font-weight-520">Hard</span>
+              </div>
+              <div class="d-flex justify-content-around bg-light rounded p-3 mb-4 text-center">
+                <div>
+                  <span class="text-muted small d-block">Distance</span>
+                  <strong class="text-dark">48 km</strong>
+                </div>
+                <div>
+                  <span class="text-muted small d-block">Elevation</span>
+                  <strong class="text-dark">650 m</strong>
+                </div>
+                <div>
+                  <span class="text-muted small d-block">Terrain</span>
+                  <strong class="text-dark">Gravel / Dirt</strong>
+                </div>
+              </div>
+              <p class="text-muted small mb-4">Rugged backcountry trail exploring canyon views. Wider tire setups (38mm+ or MTBs) are highly recommended.</p>
+              <a href="#" class="btn btn-premium-outline w-100 d-flex align-items-center justify-content-center">
+                <i data-lucide="download" class="me-2 w-4 h-4"></i> Download GPX File
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 my-md-5 overflow-hidden">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Stories from the Road</span>
+          <h2 class="display-5 mt-2 mb-3">What Our Riders Say</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Check reviews from club members and international riders who have completed our guided tours.</p>
+        </div>
+
+        <div class="swiper testimonials-slider">
+          <div class="swiper-wrapper">
+            <!-- Review 1 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card h-100 text-start">
+                <div class="d-flex align-items-center mb-4">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Clara Sterling" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                  <div>
+                    <h5 class="mb-0">Clara Sterling</h5>
+                    <span class="text-primary small">Premium Member</span>
+                  </div>
+                </div>
+                <p class="text-muted small mb-3">"The Alpine Ridge road tour was perfectly supported. The ride leaders paced us brilliantly and the hotels were fantastic! Can't wait for my next expedition with VeloMax."</p>
+                <div class="text-warning">
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card h-100 text-start">
+                <div class="d-flex align-items-center mb-4">
+                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Johan van der Berg" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                  <div>
+                    <h5 class="mb-0">Johan van der Berg</h5>
+                    <span class="text-primary small">Adventure Rider</span>
+                  </div>
+                </div>
+                <p class="text-muted small mb-3">"Renting the full-suspension Santa Cruz was seamless. It was set up exactly to my measurements when I arrived. The trail maps and recommendations were premium."</p>
+                <div class="text-warning">
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card h-100 text-start">
+                <div class="d-flex align-items-center mb-4">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Elena Rostova" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                  <div>
+                    <h5 class="mb-0">Elena Rostova</h5>
+                    <span class="text-primary small">Individual Member</span>
+                  </div>
+                </div>
+                <p class="text-muted small mb-3">"I joined as a beginner in the foundation skills program. The coaches were patient, and the group dynamic is so encouraging. I'm now confidently doing 100km rides."</p>
+                <div class="text-warning">
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-warning"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination mt-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container" style="max-width: 800px;">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Support</span>
+          <h2 class="display-5 mt-2 mb-3">Frequently Asked Questions</h2>
+          <p class="section-subtitle text-muted">Answers to basic questions about rides, membership tiers, and gear.</p>
+        </div>
+
+        <div class="accordion" id="faqAccordion" data-aos="fade-up">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Do I need to own a high-end bike to join group rides?
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Not at all! VeloMax welcomes all safe road-worthy bikes. If you do not own a road or mountain bike, you can rent one from our modern carbon fleet at special member discounts.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                How do I choose the correct difficulty level for a tour?
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Each tour is tagged with distance, elevation metrics, and difficulty ratings. We highly recommend checking our Difficulty Legend on the Cycling Tours page, or talking with one of our ride leaders.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Are support vehicles present on long-distance tours?
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes! All multi-day expeditions and endurance tours include dedicated support vehicles. These SAG vehicles carry spare wheels, components, tools, recovery nutrition, and extra storage.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Can I pause or cancel my membership at any time?
+              </button>
+            </h3>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes, membership plans can be paused or modified directly from your user dashboard, or by contacting our support desk. No cancellation fees apply.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-5 text-white position-relative overflow-hidden">
+      <div class="position-absolute top-0 left-0 w-100 h-100 bg-dark z-n1"></div>
+      <div class="container position-relative z-1 py-4" data-aos="fade-up">
+        <div class="row align-items-center gy-4 text-start">
+          <div class="col-lg-6">
+            <h2 class="display-6 mb-2">Subscribe to our Newsletter</h2>
+            <p class="text-light opacity-75 mb-0 font-weight-420">Receive exclusive route maps, discount access, and seasonal updates directly in your inbox.</p>
+          </div>
+          <div class="col-lg-6">
+            <form class="premium-form d-flex flex-column flex-sm-row gap-3">
+              <div class="form-floating flex-grow-1">
+                <input type="email" class="form-control text-white bg-transparent border-white" id="newsletterEmail" placeholder="name@example.com" required>
+                <label for="newsletterEmail" class="text-white opacity-75">Your email address</label>
+                <div class="invalid-feedback text-warning">Please enter a valid email address.</div>
+              </div>
+              <button type="submit" class="btn btn-premium align-self-start align-self-sm-stretch px-4">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Success Modal for Form Submissions -->
+  <div class="modal fade" id="success-modal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel border-0 text-white" style="background: rgba(10, 14, 18, 0.95);">
+        <div class="modal-body text-center p-5">
+          <div class="bg-primary text-white rounded-circle p-3 d-inline-block mb-4">
+            <i data-lucide="check" class="w-12 h-12"></i>
+          </div>
+          <h3 class="mb-3">Submission Successful!</h3>
+          <p class="text-light opacity-75 small">Thank you for contacting VeloMax. Our team will get back to you within 24 hours.</p>
+          <button type="button" class="btn btn-premium mt-3" data-bs-dismiss="modal">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-start">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="footer-logo d-flex align-items-center text-decoration-none text-body mb-3" href="index.html">
+            <i data-lucide="bike" class="me-2 text-primary"></i>
+            <span>Velo</span>Max
+          </a>
+          <p class="text-muted small mb-4">VeloMax is an international premium cycling club and adventure tours operator, designing high-performance routes and community experiences since 2012.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+            <a href="#" class="social-icon" aria-label="Youtube"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"></path><polygon points="10 15 15 12 10 9"></polygon></svg></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link small mb-2">Club History</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Our Guides</a></li>
+            <li><a href="gallery.html" class="footer-link small mb-2">Photo Gallery</a></li>
+            <li><a href="contact.html" class="footer-link small mb-2">Support Center</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="mb-3">Cycling Tours</h5>
+          <ul class="list-unstyled">
+            <li><a href="tours.html" class="footer-link small mb-2">Road Climbing</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">MTB Adventures</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Gravel Trails</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Family Cruising</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="mb-3">Club Information</h5>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="map-pin" class="me-2 text-primary w-4 h-4"></i> 104 carbon drive, cycle city, CC 90210</p>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="phone" class="me-2 text-primary w-4 h-4"></i> +1 (555) 321-VELO</p>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="mail" class="me-2 text-primary w-4 h-4"></i> info@velomaxcycling.com</p>
+          <p class="text-danger small mb-0 d-flex align-items-center"><i data-lucide="phone-call" class="me-2 text-danger w-4 h-4"></i> Emergency: +1 (555) 911-VELO</p>
+        </div>
+      </div>
+      <div class="border-top mt-5 pt-4 text-center">
+        <p class="text-muted small mb-0">&copy; 2026 VeloMax Cycling. All Rights Reserved. Designed by Antigravity.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Libraries CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

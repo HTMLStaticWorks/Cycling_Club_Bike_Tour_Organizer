@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | VeloMax Cycling Club</title>
+  <meta name="description" content="View action photos from VeloMax road climbing tours, mountain bike adventures, events, training sessions, and our rental bike collection.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Fonts & Styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Library CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="sr-only-focusable py-2 px-3 border bg-body text-primary position-absolute">Skip to main content</a>
+
+  <!-- Header Navigation -->
+  <header class="navbar navbar-expand-lg sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i data-lucide="bike" class="me-2 text-primary"></i>
+        <span>Velo</span>Max
+      </a>
+      
+      <!-- Navigation Menu links (Desktop) -->
+      <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav align-items-center me-4">
+          <!-- Multi-Home Toggle Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu bg-body border-0 shadow-lg p-2" aria-labelledby="homeDropdown" style="border-radius: var(--border-radius-sm);">
+              <li><a class="dropdown-item rounded py-2 small" href="index.html">Home 1: Classic Club</a></li>
+              <li><a class="dropdown-item rounded py-2 small" href="index2.html">Home 2: Wilderness Tour</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="membership.html" class="btn btn-premium">Join Club</a>
+          <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-right-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Right Utilities -->
+      <div class="d-flex d-lg-none align-items-center gap-2">
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="offcanvas-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <button id="theme-toggle-mob" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="lang-toggle-mob" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+          <i data-lucide="arrow-right-left"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div id="offcanvas-overlay" class="offcanvas-overlay"></div>
+  <div id="offcanvas-menu" class="offcanvas-menu" role="dialog" aria-modal="true" aria-label="Main Menu">
+    <nav class="d-flex flex-column">
+      <a href="index.html" class="offcanvas-link">Home 1: Classic Club</a>
+      <a href="index2.html" class="offcanvas-link">Home 2: Wilderness Tour</a>
+      <a href="about.html" class="offcanvas-link">About</a>
+      <a href="tours.html" class="offcanvas-link">Cycling Tours</a>
+      <a href="membership.html" class="offcanvas-link">Club Membership</a>
+      <a href="training.html" class="offcanvas-link">Coaching & Training</a>
+      <a href="gallery.html" class="offcanvas-link">Gallery</a>
+      <a href="contact.html" class="offcanvas-link">Contact</a>
+    </nav>
+    <div class="mt-auto d-flex flex-column gap-3">
+      <a href="membership.html" class="btn btn-premium w-100">Join Club</a>
+      <a href="tours.html" class="btn btn-premium-outline w-100">Book Tour</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    
+    <!-- Hero Inner -->
+    <section class="hero-section text-white d-flex align-items-center" style="min-height: 45vh;">
+      <div class="hero-bg" style="background-image: url('assets/images/hero_road_cyclist.png');"></div>
+      <div class="hero-overlay"></div>
+      <div class="container position-relative z-1">
+        <div class="row text-start">
+          <div class="col-lg-8">
+            <span class="badge bg-primary px-3 py-2 text-uppercase mb-3">Moments</span>
+            <h1 class="display-3 mb-3 animate-split-text">VeloMax Media Gallery</h1>
+            <p class="lead-text mb-0 text-light opacity-90">Explore photos from our rides, trail expeditions, crit competitions, and carbon fleet setups.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Masonry Gallery with Filtering -->
+    <section class="py-5 my-md-4">
+      <div class="container text-center">
+        <!-- Filter Tabs -->
+        <div class="mb-5 d-flex flex-wrap justify-content-center gap-2" data-aos="fade-up">
+          <button class="gallery-filter-btn active" data-filter="all">All Photos</button>
+          <button class="gallery-filter-btn" data-filter="club">Club Rides</button>
+          <button class="gallery-filter-btn" data-filter="mountain">Mountain Adventures</button>
+          <button class="gallery-filter-btn" data-filter="road">Road Tours</button>
+          <button class="gallery-filter-btn" data-filter="events">Events</button>
+          <button class="gallery-filter-btn" data-filter="training">Training Sessions</button>
+          <button class="gallery-filter-btn" data-filter="bikes">Bike Collection</button>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="row g-4 justify-content-center text-start">
+          <!-- Item 1 -->
+          <div class="col-lg-4 col-md-6 gallery-item-wrapper" data-category="road" data-aos="zoom-in">
+            <div class="gallery-item">
+              <a href="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1200&q=80" class="gallery-trigger" aria-label="View Alpine road cyclist photo in lightbox">
+                <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" alt="Cyclist on steep mountain pass climb" class="gallery-item-img img-fluid" loading="lazy">
+                <div class="gallery-item-overlay">
+                  <h5 class="text-white mb-1">Alpine Col Ascent</h5>
+                  <span class="text-primary small">Road Tours</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="col-lg-4 col-md-6 gallery-item-wrapper" data-category="mountain" data-aos="zoom-in" data-aos-delay="100">
+            <div class="gallery-item">
+              <a href="assets/images/hero_mountain_biker.png" class="gallery-trigger" aria-label="View Mountain biker descending photo in lightbox">
+                <img src="assets/images/hero_mountain_biker.png" alt="MTB trail descender" class="gallery-item-img img-fluid" loading="lazy">
+                <div class="gallery-item-overlay">
+                  <h5 class="text-white mb-1">Red Canyon Singletrack</h5>
+                  <span class="text-primary small">Mountain Adventures</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="col-lg-4 col-md-6 gallery-item-wrapper" data-category="club" data-aos="zoom-in" data-aos-delay="200">
+            <div class="gallery-item">
+              <a href="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=1200&q=80" class="gallery-trigger" aria-label="View Family road cycle ride photo in lightbox">
+                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=800&q=80" alt="Family ride on flat country lane" class="gallery-item-img img-fluid" loading="lazy">
+                <div class="gallery-item-overlay">
+                  <h5 class="text-white mb-1">Green Valley Family Spin</h5>
+                  <span class="text-primary small">Club Rides</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="col-lg-4 col-md-6 gallery-item-wrapper" data-category="events" data-aos="zoom-in">
+            <div class="gallery-item">
+              <a href="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80" class="gallery-trigger" aria-label="View Sunrise Gran Fondo photo in lightbox">
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80" alt="Group riders crossing standard ocean highway at sunrise" class="gallery-item-img img-fluid" loading="lazy">
+                <div class="gallery-item-overlay">
+                  <h5 class="text-white mb-1">Sunrise Gran Fondo Check</h5>
+                  <span class="text-primary small">Events</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="col-lg-4 col-md-6 gallery-item-wrapper" data-category="training" data-aos="zoom-in" data-aos-delay="100">
+            <div class="gallery-item">
+              <a href="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=1200&q=80" class="gallery-trigger" aria-label="View Coach sarah training session photo in lightbox">
+                <img src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&q=80" alt="FTP test session inside training center" class="gallery-item-img img-fluid" loading="lazy">
+                <div class="gallery-item-overlay">
+                  <h5 class="text-white mb-1">FTP Threshold Check</h5>
+                  <span class="text-primary small">Training Sessions</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="col-lg-4 col-md-6 gallery-item-wrapper" data-category="bikes" data-aos="zoom-in" data-aos-delay="200">
+            <div class="gallery-item">
+              <a href="https://images.unsplash.com/photo-1544192240-4a34fed0104c?auto=format&fit=crop&w=1200&q=80" class="gallery-trigger" aria-label="View Carbon road rental bike photo in lightbox">
+                <img src="https://images.unsplash.com/photo-1544192240-4a34fed0104c?auto=format&fit=crop&w=800&q=80" alt="Carbon Specialized Tarmac display frame" class="gallery-item-img img-fluid" loading="lazy">
+                <div class="gallery-item-overlay">
+                  <h5 class="text-white mb-1">Carbon specialized Tarmac SL7</h5>
+                  <span class="text-primary small">Bike Collection</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="col-lg-4 col-md-6 gallery-item-wrapper" data-category="mountain" data-aos="zoom-in">
+            <div class="gallery-item">
+              <a href="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&q=80" class="gallery-trigger" aria-label="View Gravel trail explore photo in lightbox">
+                <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80" alt="Gravel mountain pass loop trail" class="gallery-item-img img-fluid" loading="lazy">
+                <div class="gallery-item-overlay">
+                  <h5 class="text-white mb-1">Highland Gravel Ascent</h5>
+                  <span class="text-primary small">Mountain Adventures</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Accessible Lightbox Modal Container -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-label="Image Lightbox Viewer" aria-modal="true">
+    <div class="lightbox-content-wrapper">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+      <img id="lightbox-img" src="" alt="" class="lightbox-img">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-start">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="footer-logo d-flex align-items-center text-decoration-none text-body mb-3" href="index.html">
+            <i data-lucide="bike" class="me-2 text-primary"></i>
+            <span>Velo</span>Max
+          </a>
+          <p class="text-muted small mb-4">VeloMax is an international premium cycling club and adventure tours operator, designing high-performance routes and community experiences since 2012.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+            <a href="#" class="social-icon" aria-label="Youtube"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"></path><polygon points="10 15 15 12 10 9"></polygon></svg></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link small mb-2">Club History</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Our Guides</a></li>
+            <li><a href="gallery.html" class="footer-link small mb-2">Photo Gallery</a></li>
+            <li><a href="contact.html" class="footer-link small mb-2">Support Center</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="mb-3">Cycling Tours</h5>
+          <ul class="list-unstyled">
+            <li><a href="tours.html" class="footer-link small mb-2">Road Climbing</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">MTB Adventures</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Gravel Trails</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Family Cruising</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="mb-3">Club Information</h5>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="map-pin" class="me-2 text-primary w-4 h-4"></i> 104 carbon drive, cycle city, CC 90210</p>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="phone" class="me-2 text-primary w-4 h-4"></i> +1 (555) 321-VELO</p>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="mail" class="me-2 text-primary w-4 h-4"></i> info@velomaxcycling.com</p>
+          <p class="text-danger small mb-0 d-flex align-items-center"><i data-lucide="phone-call" class="me-2 text-danger w-4 h-4"></i> Emergency: +1 (555) 911-VELO</p>
+        </div>
+      </div>
+      <div class="border-top mt-5 pt-4 text-center">
+        <p class="text-muted small mb-0">&copy; 2026 VeloMax Cycling. All Rights Reserved. Designed by Antigravity.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Libraries CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

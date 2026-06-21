@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#0F2D37" />
+  <!-- Left Wheel -->
+  <circle cx="32" cy="62" r="12" fill="none" stroke="#FF6B00" stroke-width="5"/>
+  <circle cx="32" cy="62" r="3" fill="#FF6B00"/>
+  <!-- Right Wheel -->
+  <circle cx="68" cy="62" r="12" fill="none" stroke="#FF6B00" stroke-width="5"/>
+  <circle cx="68" cy="62" r="3" fill="#FF6B00"/>
+  <!-- Frame and Handlebar/Seat -->
+  <path d="M32 62 L48 62 L40 40 M48 62 L60 40 L68 62 M40 40 L60 40 M60 40 L62 32 L56 32 M40 40 L36 40" 
+        fill="none" stroke="#00E5FF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

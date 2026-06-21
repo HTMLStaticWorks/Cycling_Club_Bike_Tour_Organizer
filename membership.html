@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Membership | VeloMax Cycling Club</title>
+  <meta name="description" content="Join VeloMax. Explore student, individual, family, and premium membership tiers. Review benefits, rules, and register today.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Fonts & Styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Library CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="sr-only-focusable py-2 px-3 border bg-body text-primary position-absolute">Skip to main content</a>
+
+  <!-- Header Navigation -->
+  <header class="navbar navbar-expand-lg sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i data-lucide="bike" class="me-2 text-primary"></i>
+        <span>Velo</span>Max
+      </a>
+      
+      <!-- Navigation Menu links (Desktop) -->
+      <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav align-items-center me-4">
+          <!-- Multi-Home Toggle Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu bg-body border-0 shadow-lg p-2" aria-labelledby="homeDropdown" style="border-radius: var(--border-radius-sm);">
+              <li><a class="dropdown-item rounded py-2 small" href="index.html">Home 1: Classic Club</a></li>
+              <li><a class="dropdown-item rounded py-2 small" href="index2.html">Home 2: Wilderness Tour</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link active" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="membership.html" class="btn btn-premium">Join Club</a>
+          <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-right-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Right Utilities -->
+      <div class="d-flex d-lg-none align-items-center gap-2">
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="offcanvas-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <button id="theme-toggle-mob" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="lang-toggle-mob" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+          <i data-lucide="arrow-right-left"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div id="offcanvas-overlay" class="offcanvas-overlay"></div>
+  <div id="offcanvas-menu" class="offcanvas-menu" role="dialog" aria-modal="true" aria-label="Main Menu">
+    <nav class="d-flex flex-column">
+      <a href="index.html" class="offcanvas-link">Home 1: Classic Club</a>
+      <a href="index2.html" class="offcanvas-link">Home 2: Wilderness Tour</a>
+      <a href="about.html" class="offcanvas-link">About</a>
+      <a href="tours.html" class="offcanvas-link">Cycling Tours</a>
+      <a href="membership.html" class="offcanvas-link">Club Membership</a>
+      <a href="training.html" class="offcanvas-link">Coaching & Training</a>
+      <a href="gallery.html" class="offcanvas-link">Gallery</a>
+      <a href="contact.html" class="offcanvas-link">Contact</a>
+    </nav>
+    <div class="mt-auto d-flex flex-column gap-3">
+      <a href="membership.html" class="btn btn-premium w-100">Join Club</a>
+      <a href="tours.html" class="btn btn-premium-outline w-100">Book Tour</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    
+    <!-- Hero Inner -->
+    <section class="hero-section text-white d-flex align-items-center" style="min-height: 45vh;">
+      <div class="hero-bg" style="background-image: url('assets/images/hero_road_cyclist.png');"></div>
+      <div class="hero-overlay"></div>
+      <div class="container position-relative z-1">
+        <div class="row text-start">
+          <div class="col-lg-8">
+            <span class="badge bg-primary px-3 py-2 text-uppercase mb-3">Join Us</span>
+            <h1 class="display-3 mb-3 animate-split-text">Club Membership</h1>
+            <p class="lead-text mb-0 text-light opacity-90">Unlock group spins, exclusive component discounts, uci coach scheduling, and priority carbon rental slots.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Plans Tiers -->
+    <section class="py-5 my-md-4">
+      <div class="container text-start">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Tiers</span>
+          <h2 class="display-5 mt-2 mb-3">Membership Pricing Tiers</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Select a membership tier that matches your cycling goals and lifestyle.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Tier 1 -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="premium-card p-4 d-flex flex-column h-100 text-start">
+              <span class="text-muted small text-uppercase">Student Rider</span>
+              <h3 class="my-2 display-6 text-primary">$19<span class="fs-6 text-muted font-weight-400">/ mo</span></h3>
+              <p class="text-muted small mb-4">A budget plan designed for students and young riders looking for safe group connections.</p>
+              <ul class="list-unstyled mb-5 small text-muted">
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> Weekly group spins</li>
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> Club Discord access</li>
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> 10% store discounts</li>
+                <li class="mb-0"><i data-lucide="x" class="text-danger me-2"></i> No coaching sessions</li>
+              </ul>
+              <a href="#joinForm" class="btn btn-premium-outline w-100 mt-auto" onclick="document.getElementById('plan-select').value='student';">Select Plan</a>
+            </div>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="premium-card p-4 d-flex flex-column h-100 text-start border-primary">
+              <span class="text-primary small text-uppercase font-weight-550">Individual Rider</span>
+              <h3 class="my-2 display-6 text-primary">$39<span class="fs-6 text-muted font-weight-400">/ mo</span></h3>
+              <p class="text-muted small mb-4">Our most popular plan. Ideal for regular weekend riders looking to build speed and stamina.</p>
+              <ul class="list-unstyled mb-5 small text-muted">
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> Weekly group spins</li>
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> Club Discord access</li>
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> 15% store discounts</li>
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> 1 coach consult / month</li>
+                <li class="mb-0"><i data-lucide="check" class="text-primary me-2"></i> Rental priority booking</li>
+              </ul>
+              <a href="#joinForm" class="btn btn-premium w-100 mt-auto" onclick="document.getElementById('plan-select').value='individual';">Select Plan</a>
+            </div>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="premium-card p-4 d-flex flex-column h-100 text-start">
+              <span class="text-muted small text-uppercase">Family Package</span>
+              <h3 class="my-2 display-6 text-primary">$69<span class="fs-6 text-muted font-weight-400">/ mo</span></h3>
+              <p class="text-muted small mb-4">Supports up to 4 family members. Focuses on casual family spins and skills development.</p>
+              <ul class="list-unstyled mb-5 small text-muted">
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> Family-friendly tours</li>
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> Kids safety skills class</li>
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> 15% shop discount</li>
+                <li class="mb-0"><i data-lucide="check" class="text-primary me-2"></i> Rent 2-for-1 pricing</li>
+              </ul>
+              <a href="#joinForm" class="btn btn-premium-outline w-100 mt-auto" onclick="document.getElementById('plan-select').value='family';">Select Plan</a>
+            </div>
+          </div>
+
+          <!-- Tier 4 -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="premium-card p-4 d-flex flex-column h-100 text-start">
+              <span class="text-muted small text-uppercase">Premium Rider</span>
+              <h3 class="my-2 display-6 text-primary">$99<span class="fs-6 text-muted font-weight-400">/ mo</span></h3>
+              <p class="text-muted small mb-4">For competitive racers and distance riders. Includes full coach access and metrics checks.</p>
+              <ul class="list-unstyled mb-5 small text-muted">
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> Priority group leads</li>
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> Unlimited uci coaching</li>
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> 25% store discounts</li>
+                <li class="mb-2"><i data-lucide="check" class="text-primary me-2"></i> Free premium rental slot</li>
+                <li class="mb-0"><i data-lucide="check" class="text-primary me-2"></i> Gran Fondo passes</li>
+              </ul>
+              <a href="#joinForm" class="btn btn-premium-outline w-100 mt-auto" onclick="document.getElementById('plan-select').value='premium';">Select Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Comparison Table -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container text-start">
+        <h3 class="mb-4 text-center">Feature Comparison</h3>
+        <div class="table-responsive glass-panel p-4 border-0">
+          <table class="table align-middle text-center">
+            <thead>
+              <tr class="text-muted small">
+                <th scope="col" class="text-start">Benefits</th>
+                <th scope="col">Student</th>
+                <th scope="col">Individual</th>
+                <th scope="col">Family</th>
+                <th scope="col">Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-start">Weekly group spins</td>
+                <td><i data-lucide="check" class="text-primary"></i></td>
+                <td><i data-lucide="check" class="text-primary"></i></td>
+                <td><i data-lucide="check" class="text-primary"></i></td>
+                <td><i data-lucide="check" class="text-primary"></i></td>
+              </tr>
+              <tr>
+                <td class="text-start">Store discounts</td>
+                <td>10%</td>
+                <td>15%</td>
+                <td>15%</td>
+                <td>25%</td>
+              </tr>
+              <tr>
+                <td class="text-start">Discord access</td>
+                <td><i data-lucide="check" class="text-primary"></i></td>
+                <td><i data-lucide="check" class="text-primary"></i></td>
+                <td><i data-lucide="check" class="text-primary"></i></td>
+                <td><i data-lucide="check" class="text-primary"></i></td>
+              </tr>
+              <tr>
+                <td class="text-start">UCI Coaching consulting</td>
+                <td><i data-lucide="x" class="text-danger"></i></td>
+                <td>1 / mo</td>
+                <td><i data-lucide="x" class="text-danger"></i></td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td class="text-start">Fleet Rental discount</td>
+                <td><i data-lucide="x" class="text-danger"></i></td>
+                <td>10% off</td>
+                <td>2-for-1 pricing</td>
+                <td>Free 3 days/mo</td>
+              </tr>
+              <tr>
+                <td class="text-start">Gran Fondo free entry passes</td>
+                <td><i data-lucide="x" class="text-danger"></i></td>
+                <td><i data-lucide="x" class="text-danger"></i></td>
+                <td><i data-lucide="x" class="text-danger"></i></td>
+                <td>2 tickets / yr</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monthly Ride Calendar Grid -->
+    <section class="py-5 my-md-4">
+      <div class="container text-start">
+        <h3 class="mb-4 text-center">Weekly Ride Calendar</h3>
+        <p class="text-muted small text-center mb-5">Our organized weekly club rides depart from the primary West Gate Hub.</p>
+        
+        <div class="row g-4">
+          <!-- Tuesday -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <div class="glass-panel p-4 border-0 h-100">
+              <h5 class="text-primary mb-3">Tuesday Morning</h5>
+              <p class="font-weight-550 mb-1">Sunrise Coffee Spin</p>
+              <span class="text-muted small d-block mb-3"><i data-lucide="clock" class="w-4 h-4 me-1"></i> 06:00 - 08:00</span>
+              <p class="text-muted small mb-0">A slow recovery pace ride (22km/h) covering flat routes. Ends at Coastal cafe hub.</p>
+            </div>
+          </div>
+          <!-- Thursday -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-panel p-4 border-0 h-100">
+              <h5 class="text-primary mb-3">Thursday Evening</h5>
+              <p class="font-weight-550 mb-1">Crit Race Pace Drills</p>
+              <span class="text-muted small d-block mb-3"><i data-lucide="clock" class="w-4 h-4 me-1"></i> 18:30 - 20:30</span>
+              <p class="text-muted small mb-0">Advanced high-intensity intervals and draft rotation. Speed exceeds 35km/h.</p>
+            </div>
+          </div>
+          <!-- Saturday -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-panel p-4 border-0 h-100">
+              <h5 class="text-primary mb-3">Saturday Morning</h5>
+              <p class="font-weight-550 mb-1">Epic Mountain Col Climb</p>
+              <span class="text-muted small d-block mb-3"><i data-lucide="clock" class="w-4 h-4 me-1"></i> 07:00 - 12:00</span>
+              <p class="text-muted small mb-0">Intermediate & advanced split climb. Supported loops up Apex Peak Summit.</p>
+            </div>
+          </div>
+          <!-- Sunday -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="glass-panel p-4 border-0 h-100">
+              <h5 class="text-primary mb-3">Sunday Morning</h5>
+              <p class="font-weight-550 mb-1">Family Green Valley Picnic</p>
+              <span class="text-muted small d-block mb-3"><i data-lucide="clock" class="w-4 h-4 me-1"></i> 09:00 - 13:00</span>
+              <p class="text-muted small mb-0">Flat paths, beginner friendly pace. Kids safety drills and picnic check stop.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Club Rules & Safety Code -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container text-start" style="max-width: 800px;">
+        <h3 class="mb-4 text-center">VeloMax Ride Safety Code</h3>
+        <div class="glass-panel p-4 border-0">
+          <ol class="mb-0 text-muted small">
+            <li class="mb-3"><strong>Helmets are Mandatory:</strong> Absolutely no rider will join any VeloMax group spin or tour without a certified cycling helmet.</li>
+            <li class="mb-3"><strong>Respect Group Leaders:</strong> Always stay behind the lead marshal. Do not pass or split the draft lane unless directed by a leader.</li>
+            <li class="mb-3"><strong>Signal Hazards:</strong> Point and call out gravel patch, potholes, glass, or merging cars to protect the cyclists behind you.</li>
+            <li class="mb-3"><strong>No Headsets or Earbuds:</strong> Riders must remain alert to calls and merging traffic. Bone-conduction setups are allowed at low volume.</li>
+            <li class="mb-0"><strong>Traffic Compliance:</strong> Stop at red lights and stop signs. We cycle as vehicles and respect local community road laws.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Club Form Section -->
+    <section class="py-5 my-md-5" id="joinForm">
+      <div class="container" style="max-width: 700px;">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="display-5">Apply For Membership</h2>
+          <p class="text-muted small">Complete the form below. Our membership coordinator will reach out to issue your welcome pack.</p>
+        </div>
+
+        <div class="glass-panel p-4 p-md-5 border-0 text-start" data-aos="fade-up">
+          <form class="premium-form">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="member-fname" placeholder="John" required>
+                  <label for="member-fname">First Name</label>
+                  <div class="invalid-feedback">Please enter your first name.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="member-lname" placeholder="Doe" required>
+                  <label for="member-lname">Last Name</label>
+                  <div class="invalid-feedback">Please enter your last name.</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="member-email" placeholder="name@example.com" required>
+                  <label for="member-email">Email Address</label>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="plan-select" aria-label="Select Plan Type" required>
+                    <option value="" disabled selected>Choose a tier...</option>
+                    <option value="student">Student Rider ($19/mo)</option>
+                    <option value="individual">Individual Rider ($39/mo)</option>
+                    <option value="family">Family Package ($69/mo)</option>
+                    <option value="premium">Premium Rider ($99/mo)</option>
+                  </select>
+                  <label for="plan-select">Membership Tier</label>
+                  <div class="invalid-feedback">Please select a membership plan.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="tel" class="form-control" id="member-phone" placeholder="1234567890" required>
+                  <label for="member-phone">Phone Number</label>
+                  <div class="invalid-feedback">Please enter your phone number.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="member-experience" placeholder="How long have you been cycling?" style="height: 100px;"></textarea>
+                  <label for="member-experience">Cycling Experience & Goals</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="member-agree" required>
+                  <label class="form-check-label small text-muted" for="member-agree">
+                    I have read and agree to respect the VeloMax safety code guidelines.
+                  </label>
+                  <div class="invalid-feedback">You must check the agreement box to proceed.</div>
+                </div>
+              </div>
+              <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-premium w-100">Submit Application</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="success-modal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel border-0 text-white" style="background: rgba(10, 14, 18, 0.95);">
+        <div class="modal-body text-center p-5">
+          <div class="bg-primary text-white rounded-circle p-3 d-inline-block mb-4">
+            <i data-lucide="check" class="w-12 h-12"></i>
+          </div>
+          <h3 class="mb-3">Application Received!</h3>
+          <p class="text-light opacity-75 small">Thank you for applying to VeloMax. Our team will verify your phone/email and dispatch your carbon store discount cards.</p>
+          <button type="button" class="btn btn-premium mt-3" data-bs-dismiss="modal">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-start">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="footer-logo d-flex align-items-center text-decoration-none text-body mb-3" href="index.html">
+            <i data-lucide="bike" class="me-2 text-primary"></i>
+            <span>Velo</span>Max
+          </a>
+          <p class="text-muted small mb-4">VeloMax is an international premium cycling club and adventure tours operator, designing high-performance routes and community experiences since 2012.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+            <a href="#" class="social-icon" aria-label="Youtube"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"></path><polygon points="10 15 15 12 10 9"></polygon></svg></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link small mb-2">Club History</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Our Guides</a></li>
+            <li><a href="gallery.html" class="footer-link small mb-2">Photo Gallery</a></li>
+            <li><a href="contact.html" class="footer-link small mb-2">Support Center</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="mb-3">Cycling Tours</h5>
+          <ul class="list-unstyled">
+            <li><a href="tours.html" class="footer-link small mb-2">Road Climbing</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">MTB Adventures</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Gravel Trails</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Family Cruising</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="mb-3">Club Information</h5>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="map-pin" class="me-2 text-primary w-4 h-4"></i> 104 carbon drive, cycle city, CC 90210</p>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="phone" class="me-2 text-primary w-4 h-4"></i> +1 (555) 321-VELO</p>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="mail" class="me-2 text-primary w-4 h-4"></i> info@velomaxcycling.com</p>
+          <p class="text-danger small mb-0 d-flex align-items-center"><i data-lucide="phone-call" class="me-2 text-danger w-4 h-4"></i> Emergency: +1 (555) 911-VELO</p>
+        </div>
+      </div>
+      <div class="border-top mt-5 pt-4 text-center">
+        <p class="text-muted small mb-0">&copy; 2026 VeloMax Cycling. All Rights Reserved. Designed by Antigravity.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Libraries CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

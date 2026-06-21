@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VeloMax | Wilderness Adventure & Cycling Tours</title>
+  <meta name="description" content="Embark on scenic mountain biking and gravel tours with VeloMax. Custom route selectors, altitude profile maps, and elite tour leaders.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Fonts & Styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Library CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    /* Specific Home 2 Styling Overrides */
+    .hero-split-card {
+      height: 400px;
+      overflow: hidden;
+      border-radius: var(--border-radius-md);
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+    .hero-split-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .hero-split-card:hover img {
+      transform: scale(1.08);
+    }
+    .hero-split-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(15,45,55,0.1) 30%, rgba(10,14,18,0.9) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+    }
+    .metric-dial {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 15px;
+    }
+    .metric-svg {
+      transform: rotate(-90deg);
+      width: 100%;
+      height: 100%;
+    }
+    .metric-circle-bg {
+      fill: none;
+      stroke: var(--card-border);
+      stroke-width: 8;
+    }
+    .metric-circle-val {
+      fill: none;
+      stroke: var(--primary-color);
+      stroke-width: 8;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .metric-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-heading);
+      font-weight: 580;
+      font-size: 1.3rem;
+      color: var(--text-color);
+    }
+    .horizontal-tour-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+    }
+    .horizontal-tour-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(255,107,0,0.3);
+    }
+    .horizontal-tour-img {
+      height: 100%;
+      min-height: 250px;
+      object-fit: cover;
+    }
+    .route-selector-box {
+      margin-top: -60px;
+      position: relative;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="sr-only-focusable py-2 px-3 border bg-body text-primary position-absolute">Skip to main content</a>
+
+  <!-- Header Navigation -->
+  <header class="navbar navbar-expand-lg sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i data-lucide="bike" class="me-2 text-primary"></i>
+        <span>Velo</span>Max
+      </a>
+      
+      <!-- Navigation Menu links (Desktop) -->
+      <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav align-items-center me-4">
+          <!-- Multi-Home Toggle Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu bg-body border-0 shadow-lg p-2" aria-labelledby="homeDropdown" style="border-radius: var(--border-radius-sm);">
+              <li><a class="dropdown-item rounded py-2 small" href="index.html">Home 1: Classic Club</a></li>
+              <li><a class="dropdown-item rounded py-2 small active" href="index2.html">Home 2: Wilderness Tour</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="membership.html" class="btn btn-premium">Join Club</a>
+          <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-right-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Right Utilities -->
+      <div class="d-flex d-lg-none align-items-center gap-2">
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="offcanvas-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <button id="theme-toggle-mob" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="lang-toggle-mob" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+          <i data-lucide="arrow-right-left"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div id="offcanvas-overlay" class="offcanvas-overlay"></div>
+  <div id="offcanvas-menu" class="offcanvas-menu" role="dialog" aria-modal="true" aria-label="Main Menu">
+    <nav class="d-flex flex-column">
+      <a href="index.html" class="offcanvas-link">Home 1: Classic Club</a>
+      <a href="index2.html" class="offcanvas-link active">Home 2: Wilderness Tour</a>
+      <a href="about.html" class="offcanvas-link">About</a>
+      <a href="tours.html" class="offcanvas-link">Cycling Tours</a>
+      <a href="membership.html" class="offcanvas-link">Club Membership</a>
+      <a href="training.html" class="offcanvas-link">Coaching & Training</a>
+      <a href="gallery.html" class="offcanvas-link">Gallery</a>
+      <a href="contact.html" class="offcanvas-link">Contact</a>
+    </nav>
+    <div class="mt-auto d-flex flex-column gap-3">
+      <a href="membership.html" class="btn btn-premium w-100">Join Club</a>
+      <a href="tours.html" class="btn btn-premium-outline w-100">Book Tour</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    
+    <!-- Hero Banner (Cinematic Wilderness Style) -->
+    <section class="hero-section text-center text-white d-flex align-items-center justify-content-center">
+      <div class="hero-bg" style="background-image: url('assets/images/hero_mountain_biker.png');"></div>
+      <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(15,45,55,0.4) 0%, rgba(10,14,18,0.92) 100%);"></div>
+      <div class="container position-relative z-1 py-5">
+        <span class="badge bg-primary px-3 py-2 text-uppercase mb-3 hero-reveal-fade">Off-Road & Gravel Expeditions</span>
+        <h1 class="display-2 mb-4 animate-split-text" style="max-width: 900px; margin: 0 auto;">Explore the Wilderness on Two Wheels</h1>
+        <p class="lead-text mb-5 text-light opacity-90 hero-reveal-fade" style="max-width: 700px; margin: 0 auto;">Curated gravel routes, high-performance mountain singletracks, and full logistics support for the ultimate adventure athlete.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap hero-reveal-fade">
+          <a href="tours.html" class="btn btn-premium">Explore Wilderness Tours</a>
+          <a href="#booking-widget" class="btn btn-premium-outline text-white border-white">Reserve a Bike</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Interactive Booking & Route Search Bar -->
+    <div class="container route-selector-box" id="booking-widget" data-aos="fade-up">
+      <div class="glass-panel p-4 border-0 text-start shadow-lg" style="background: var(--nav-bg);">
+        <form class="premium-form row g-3 align-items-end">
+          <div class="col-md-3">
+            <label for="route-style" class="form-label small text-muted font-weight-550">Adventure Style</label>
+            <select class="form-select" id="route-style" required>
+              <option value="" disabled selected>Select style...</option>
+              <option value="road">High Alpine Road Climb</option>
+              <option value="mtb">Wilderness Mountain singletrack</option>
+              <option value="gravel">Highland Gravel Route</option>
+              <option value="family">Green Valley Family Cruise</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="route-diff" class="form-label small text-muted font-weight-550">Target Difficulty</label>
+            <select class="form-select" id="route-diff" required>
+              <option value="" disabled selected>Select level...</option>
+              <option value="beginner">Beginner (Flat path)</option>
+              <option value="intermediate">Intermediate (Rolling gravel)</option>
+              <option value="advanced">Advanced (Steep loops)</option>
+              <option value="expert">Expert/Elite (Rugged summit)</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="route-date" class="form-label small text-muted font-weight-550">Preferred Month</label>
+            <select class="form-select" id="route-date" required>
+              <option value="" disabled selected>Select month...</option>
+              <option value="june">June 2026</option>
+              <option value="july">July 2026</option>
+              <option value="aug">August 2026</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <button type="submit" class="btn btn-premium w-100"><i data-lucide="search" class="me-2 w-4 h-4"></i> Check Departure Slots</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Adventure Styles: Split Screen Asphalt vs Dirt -->
+    <section class="py-5 my-md-5">
+      <div class="container text-start">
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="hero-split-card">
+              <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" alt="Cyclist climbing pass">
+              <div class="hero-split-overlay text-white">
+                <span class="badge bg-primary align-self-start mb-2 text-uppercase">Aerobic Focus</span>
+                <h3>High Alpine Asphalt</h3>
+                <p class="small text-light opacity-75">Conquer continuous, winding switchback routes with structural group draft lines and premium carbon road setups.</p>
+                <a href="tours.html?filter=road" class="btn btn-premium btn-sm align-self-start mt-2">Explore Road Tours</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="hero-split-card">
+              <img src="assets/images/hero_mountain_biker.png" alt="Mountain bike descent">
+              <div class="hero-split-overlay text-white">
+                <span class="badge bg-primary align-self-start mb-2 text-uppercase">Adrenaline Focus</span>
+                <h3>Wilderness Trails & Dirt</h3>
+                <p class="small text-light opacity-75">Navigate rough singletrack contours, gravel climbs, and descent drops on full-suspension cross-country rigs.</p>
+                <a href="tours.html?filter=mtb" class="btn btn-premium btn-sm align-self-start mt-2">Explore Dirt Tours</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Expeditions (Horizontal Layout) -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container text-start">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Curated Departures</span>
+          <h2 class="display-5 mt-2 mb-3">Featured Expeditions</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Wider paths, deeper valleys. Explore our horizontal layouts designed for high-resolution landscape photography.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Horizontal Card 1 -->
+          <div class="col-12" data-aos="fade-up">
+            <div class="horizontal-tour-card">
+              <div class="row g-0 align-items-stretch">
+                <div class="col-lg-5 col-md-12">
+                  <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80" alt="Highland Gravel Route" class="horizontal-tour-img w-100">
+                </div>
+                <div class="col-lg-7 col-md-12 p-4 p-md-5 d-flex flex-column">
+                  <div class="d-flex justify-content-between mb-3">
+                    <span class="badge bg-success-subtle text-success">Gravel Ride</span>
+                    <span class="text-muted small"><i data-lucide="clock" class="me-1 w-4 h-4"></i> 2 Days</span>
+                  </div>
+                  <h3 class="mb-3">Highland Gravel Traverse</h3>
+                  <p class="text-muted small mb-4">Ride off the grid. Cycle along historic mountain access tracks, across shallow streams, and camp in log lodges. Perfect for intermediate riders looking for quiet nature spins.</p>
+                  <div class="row g-3 border-top pt-4 mt-auto">
+                    <div class="col-4">
+                      <span class="text-muted small d-block">Distance</span>
+                      <strong class="text-dark">140 km</strong>
+                    </div>
+                    <div class="col-4">
+                      <span class="text-muted small d-block">Ascent</span>
+                      <strong class="text-dark">940 m</strong>
+                    </div>
+                    <div class="col-4 text-end">
+                      <span class="text-muted small d-block">Price</span>
+                      <strong class="text-primary">$450</strong>
+                    </div>
+                  </div>
+                  <button class="btn btn-premium mt-4 align-self-start" data-bs-toggle="modal" data-bs-target="#bookingModal" onclick="document.getElementById('tour-select').value='Highland Gravel Traverse';">Reserve Slot</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Horizontal Card 2 -->
+          <div class="col-12" data-aos="fade-up">
+            <div class="horizontal-tour-card">
+              <div class="row g-0 align-items-stretch">
+                <div class="col-lg-5 col-md-12">
+                  <img src="assets/images/hero_mountain_biker.png" alt="Red Canyon MTB" class="horizontal-tour-img w-100">
+                </div>
+                <div class="col-lg-7 col-md-12 p-4 p-md-5 d-flex flex-column">
+                  <div class="d-flex justify-content-between mb-3">
+                    <span class="badge bg-danger-subtle text-danger">Mountain Bike</span>
+                    <span class="text-muted small"><i data-lucide="clock" class="me-1 w-4 h-4"></i> 3 Days</span>
+                  </div>
+                  <h3 class="mb-3">Red Canyon MTB Epic</h3>
+                  <p class="text-muted small mb-4">Conquer loose dusty descents and technical canyon drops. This route contains rocky, flowy singletracks and stunning slickrock desert terrain. Full medical and hydration support included.</p>
+                  <div class="row g-3 border-top pt-4 mt-auto">
+                    <div class="col-4">
+                      <span class="text-muted small d-block">Distance</span>
+                      <strong class="text-dark">180 km</strong>
+                    </div>
+                    <div class="col-4">
+                      <span class="text-muted small d-block">Ascent</span>
+                      <strong class="text-dark">1,250 m</strong>
+                    </div>
+                    <div class="col-4 text-end">
+                      <span class="text-muted small d-block">Price</span>
+                      <strong class="text-primary">$899</strong>
+                    </div>
+                  </div>
+                  <button class="btn btn-premium mt-4 align-self-start" data-bs-toggle="modal" data-bs-target="#bookingModal" onclick="document.getElementById('tour-select').value='Red Canyon MTB Epic';">Reserve Slot</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance Stats: Circular Metric Dials -->
+    <section class="py-5 my-md-4">
+      <div class="container text-start">
+        <div class="row g-4 text-center justify-content-center">
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="metric-dial">
+              <svg class="metric-svg" viewBox="0 0 100 100">
+                <circle class="metric-circle-bg" cx="50" cy="50" r="40" />
+                <circle class="metric-circle-val" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="37" />
+              </svg>
+              <div class="metric-text">85%</div>
+            </div>
+            <h5 class="mb-1">Gravel Paths</h5>
+            <span class="text-muted small">Route exploration rating</span>
+          </div>
+
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="metric-dial">
+              <svg class="metric-svg" viewBox="0 0 100 100">
+                <circle class="metric-circle-bg" cx="50" cy="50" r="40" />
+                <circle class="metric-circle-val" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="62" />
+              </svg>
+              <div class="metric-text">75%</div>
+            </div>
+            <h5 class="mb-1">Mountain Altitude</h5>
+            <span class="text-muted small">Acclimatization factor</span>
+          </div>
+
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="metric-dial">
+              <svg class="metric-svg" viewBox="0 0 100 100">
+                <circle class="metric-circle-bg" cx="50" cy="50" r="40" />
+                <circle class="metric-circle-val" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="12" />
+              </svg>
+              <div class="metric-text">95%</div>
+            </div>
+            <h5 class="mb-1">Member Safety</h5>
+            <span class="text-muted small">Marshall support loops</span>
+          </div>
+
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+            <div class="metric-dial">
+              <svg class="metric-svg" viewBox="0 0 100 100">
+                <circle class="metric-circle-bg" cx="50" cy="50" r="40" />
+                <circle class="metric-circle-val" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="50" />
+              </svg>
+              <div class="metric-text">80%</div>
+            </div>
+            <h5 class="mb-1">Climbing Stamina</h5>
+            <span class="text-muted small">Target base FTP level</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Interactive Elevation Profile Section -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container text-start">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <span class="text-primary text-uppercase font-weight-550">Metrics Visualization</span>
+            <h3 class="display-6 mt-2 mb-3">Altitude & Elevation Profile</h3>
+            <p class="text-muted small mb-4">Every route maps elevation gains accurately. Below is the custom profile loop for the signature Apex Summit climb, reaching average gradients of 7.5%.</p>
+            
+            <div class="d-flex align-items-center mb-3">
+              <i data-lucide="arrow-up-right" class="text-primary me-3"></i>
+              <span class="text-muted small">Maximum gradient points: 12% at km 14.</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <i data-lucide="flag" class="text-primary me-3"></i>
+              <span class="text-muted small">Feed station stopovers: km 35 and km 68.</span>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="glass-panel p-4 border-0" style="background-color: var(--bg-color);">
+              <svg viewBox="0 0 500 200" class="w-100" style="overflow: visible;">
+                <!-- Grid vertical borders -->
+                <line x1="50" y1="20" x2="50" y2="170" stroke="var(--card-border)" stroke-width="1"/>
+                <line x1="150" y1="20" x2="150" y2="170" stroke="var(--card-border)" stroke-width="1"/>
+                <line x1="250" y1="20" x2="250" y2="170" stroke="var(--card-border)" stroke-width="1"/>
+                <line x1="350" y1="20" x2="350" y2="170" stroke="var(--card-border)" stroke-width="1"/>
+                <line x1="450" y1="20" x2="450" y2="170" stroke="var(--card-border)" stroke-width="1"/>
+                
+                <!-- Bottom axis line -->
+                <line x1="30" y1="170" x2="470" y2="170" stroke="var(--text-color)" stroke-width="1.5"/>
+                
+                <!-- Elevation Curve -->
+                <path d="M 50 170 Q 150 150 250 80 T 450 40" fill="none" stroke="var(--primary-color)" stroke-width="4" stroke-linecap="round"/>
+                
+                <!-- Hovering indicator dot -->
+                <circle cx="250" cy="80" r="6" fill="var(--primary-color)" />
+                <line x1="250" y1="80" x2="250" y2="170" stroke="var(--primary-color)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                
+                <!-- Labels -->
+                <text x="50" y="190" font-family="Plus Jakarta Sans" font-size="10" fill="var(--text-muted)" text-anchor="middle">Start (50m)</text>
+                <text x="250" y="190" font-family="Plus Jakarta Sans" font-size="10" fill="var(--text-muted)" text-anchor="middle">Midway (890m)</text>
+                <text x="450" y="190" font-family="Plus Jakarta Sans" font-size="10" fill="var(--text-muted)" text-anchor="middle">Summit (1,890m)</text>
+                
+                <text x="250" y="65" font-family="Outfit" font-weight="600" font-size="11" fill="var(--text-color)" text-anchor="middle">Feed Zone A</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cinematic Video Preview Section -->
+    <section class="py-5 text-white position-relative text-center overflow-hidden">
+      <div class="position-absolute top-0 left-0 w-100 h-100 bg-dark z-n1"></div>
+      <!-- Background zoom stock cycling trail representation -->
+      <div class="position-absolute top-0 left-0 w-100 h-100 opacity-25 z-n1" style="background-image: url('https://images.unsplash.com/photo-1544192240-4a34fed0104c?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;"></div>
+      
+      <div class="container position-relative z-1 py-5" data-aos="zoom-in">
+        <div class="bg-primary text-white rounded-circle p-3 d-inline-flex mb-4 cursor-pointer" style="width: 80px; height: 80px; align-items: center; justify-content: center;" onclick="alert('Playing cinematic wilderness tour trailer...');">
+          <i data-lucide="play" class="w-8 h-8 fill-white ms-1"></i>
+        </div>
+        <h3 class="display-5 mb-3">VeloMax: Pyrenees Trail Expeditions</h3>
+        <p class="lead-text text-light opacity-75 mb-0" style="max-width: 650px; margin: 0 auto;">Watch our 3-minute cinematic video tour mapping off-road routes across France and Spain border trails.</p>
+      </div>
+    </section>
+
+    <!-- Support FAQ and Accordion -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container" style="max-width: 800px;">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="display-5">FAQ & Safety Guidance</h2>
+          <p class="section-subtitle text-muted">Answers to gravel routes, support mechanics, and physical prep.</p>
+        </div>
+
+        <div class="accordion shadow-sm" id="faqAccordionHome2" data-aos="fade-up">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingH2-1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseH2-1" aria-expanded="true" aria-controls="collapseH2-1">
+                What tire width setup is recommended for gravel tours?
+              </button>
+            </h3>
+            <div id="collapseH2-1" class="accordion-collapse collapse show" aria-labelledby="headingH2-1" data-bs-parent="#faqAccordionHome2">
+              <div class="accordion-body">
+                We highly suggest tires width between 38mm and 45mm, set up tubeless at lower pressures, to navigate loose rock fragments safely on gravel traverses.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingH2-2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseH2-2" aria-expanded="false" aria-controls="collapseH2-2">
+                What mechanical tools are required on wilderness rides?
+              </button>
+            </h3>
+            <div id="collapseH2-2" class="accordion-collapse collapse" aria-labelledby="headingH2-2" data-bs-parent="#faqAccordionHome2">
+              <div class="accordion-body">
+                Every VeloMax tour rider receives a pre-packed saddle bag containing spare tubes, tyre levers, multi-tool, and Co2 inflators. Our accompanying tour marshals carry extensive replacement parts and alignment tools.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Booking Modal Form (Shared with Tours page) -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content glass-panel border-0 text-body p-4">
+        <div class="modal-header border-0 pb-0">
+          <h3 class="modal-title" id="bookingModalLabel">Reserve Expedition Slot</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-4">
+          <form class="premium-form text-start">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="book-name-2" placeholder="John Doe" required>
+                  <label for="book-name-2">Full Name</label>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="book-email-2" placeholder="name@example.com" required>
+                  <label for="book-email-2">Email Address</label>
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="tour-select" aria-label="Select Cycling Tour" required>
+                    <option value="" disabled selected>Choose a tour...</option>
+                    <option value="Alpine Ridge Road Tour">Alpine Ridge Road Tour ($1,299)</option>
+                    <option value="Red Canyon MTB Epic">Red Canyon MTB Epic ($899)</option>
+                    <option value="Highland Gravel Traverse">Highland Gravel Traverse ($450)</option>
+                    <option value="Green Valley Picnic Cruise">Green Valley Picnic Cruise ($85)</option>
+                    <option value="Coastal Gravel Escapade">Coastal Gravel Escapade ($150)</option>
+                  </select>
+                  <label for="tour-select">Select Tour</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="bike-rental-2" aria-label="Bike Rental Option" required>
+                    <option value="none">Bring my own bike ($0)</option>
+                    <option value="road">Rent Carbon Road Bike ($75/day)</option>
+                    <option value="mtb">Rent Full-Suspension MTB ($85/day)</option>
+                    <option value="hybrid">Rent Urban Hybrid ($45/day)</option>
+                  </select>
+                  <label for="bike-rental-2">Bike Rental Option</label>
+                </div>
+              </div>
+              <div class="col-12 text-end">
+                <button type="button" class="btn btn-premium-outline me-2" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-premium">Confirm Booking</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="success-modal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel border-0 text-white" style="background: rgba(10, 14, 18, 0.95);">
+        <div class="modal-body text-center p-5">
+          <div class="bg-primary text-white rounded-circle p-3 d-inline-block mb-4">
+            <i data-lucide="check" class="w-12 h-12"></i>
+          </div>
+          <h3 class="mb-3">Booking Slot Locked!</h3>
+          <p class="text-light opacity-75 small">Thank you. Your tour registration is locked. Our lead marshal will call to coordinate measurements and dietary choices.</p>
+          <button type="button" class="btn btn-premium mt-3" data-bs-dismiss="modal">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-start">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="footer-logo d-flex align-items-center text-decoration-none text-body mb-3" href="index.html">
+            <i data-lucide="bike" class="me-2 text-primary"></i>
+            <span>Velo</span>Max
+          </a>
+          <p class="text-muted small mb-4">VeloMax is an international premium cycling club and adventure tours operator, designing high-performance routes and community experiences since 2012.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+            <a href="#" class="social-icon" aria-label="Youtube"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"></path><polygon points="10 15 15 12 10 9"></polygon></svg></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link small mb-2">Club History</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Our Guides</a></li>
+            <li><a href="gallery.html" class="footer-link small mb-2">Photo Gallery</a></li>
+            <li><a href="contact.html" class="footer-link small mb-2">Support Center</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="mb-3">Cycling Tours</h5>
+          <ul class="list-unstyled">
+            <li><a href="tours.html" class="footer-link small mb-2">Road Climbing</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">MTB Adventures</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Gravel Trails</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Family Cruising</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="mb-3">Club Information</h5>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="map-pin" class="me-2 text-primary w-4 h-4"></i> 104 carbon drive, cycle city, CC 90210</p>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="phone" class="me-2 text-primary w-4 h-4"></i> +1 (555) 321-VELO</p>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="mail" class="me-2 text-primary w-4 h-4"></i> info@velomaxcycling.com</p>
+          <p class="text-danger small mb-0 d-flex align-items-center"><i data-lucide="phone-call" class="me-2 text-danger w-4 h-4"></i> Emergency: +1 (555) 911-VELO</p>
+        </div>
+      </div>
+      <div class="border-top mt-5 pt-4 text-center">
+        <p class="text-muted small mb-0">&copy; 2026 VeloMax Cycling. All Rights Reserved. Designed by Antigravity.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Libraries CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

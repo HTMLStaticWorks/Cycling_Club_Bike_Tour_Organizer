@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training & Coaching | VeloMax Cycling Club</title>
+  <meta name="description" content="Improve your cycling performance with VeloMax. Professional road, mountain bike, and endurance coaching. Check schedule and register.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Fonts & Styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Library CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="sr-only-focusable py-2 px-3 border bg-body text-primary position-absolute">Skip to main content</a>
+
+  <!-- Header Navigation -->
+  <header class="navbar navbar-expand-lg sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i data-lucide="bike" class="me-2 text-primary"></i>
+        <span>Velo</span>Max
+      </a>
+      
+      <!-- Navigation Menu links (Desktop) -->
+      <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav align-items-center me-4">
+          <!-- Multi-Home Toggle Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu bg-body border-0 shadow-lg p-2" aria-labelledby="homeDropdown" style="border-radius: var(--border-radius-sm);">
+              <li><a class="dropdown-item rounded py-2 small" href="index.html">Home 1: Classic Club</a></li>
+              <li><a class="dropdown-item rounded py-2 small" href="index2.html">Home 2: Wilderness Tour</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link active" href="training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="membership.html" class="btn btn-premium">Join Club</a>
+          <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+            <i data-lucide="arrow-right-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Right Utilities -->
+      <div class="d-flex d-lg-none align-items-center gap-2">
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="offcanvas-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <button id="theme-toggle-mob" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="lang-toggle-mob" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+          <i data-lucide="arrow-right-left"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div id="offcanvas-overlay" class="offcanvas-overlay"></div>
+  <div id="offcanvas-menu" class="offcanvas-menu" role="dialog" aria-modal="true" aria-label="Main Menu">
+    <nav class="d-flex flex-column">
+      <a href="index.html" class="offcanvas-link">Home 1: Classic Club</a>
+      <a href="index2.html" class="offcanvas-link">Home 2: Wilderness Tour</a>
+      <a href="about.html" class="offcanvas-link">About</a>
+      <a href="tours.html" class="offcanvas-link">Cycling Tours</a>
+      <a href="membership.html" class="offcanvas-link">Club Membership</a>
+      <a href="training.html" class="offcanvas-link">Coaching & Training</a>
+      <a href="gallery.html" class="offcanvas-link">Gallery</a>
+      <a href="contact.html" class="offcanvas-link">Contact</a>
+    </nav>
+    <div class="mt-auto d-flex flex-column gap-3">
+      <a href="membership.html" class="btn btn-premium w-100">Join Club</a>
+      <a href="tours.html" class="btn btn-premium-outline w-100">Book Tour</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    
+    <!-- Hero Inner -->
+    <section class="hero-section text-white d-flex align-items-center" style="min-height: 45vh;">
+      <div class="hero-bg" style="background-image: url('assets/images/hero_road_cyclist.png');"></div>
+      <div class="hero-overlay"></div>
+      <div class="container position-relative z-1">
+        <div class="row text-start">
+          <div class="col-lg-8">
+            <span class="badge bg-primary px-3 py-2 text-uppercase mb-3">Performance</span>
+            <h1 class="display-3 mb-3 animate-split-text">Training & Coaching</h1>
+            <p class="lead-text mb-0 text-light opacity-90">Maximize your FTP, refine descending controls, and learn structured road racing drafts with our certified UCI mentors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training Programs Grid (6 cards) -->
+    <section class="py-5 my-md-4">
+      <div class="container text-start">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Programs</span>
+          <h2 class="display-5 mt-2 mb-3">Our Specialized Curriculums</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Structured training blocks targeting specific power zones, skills, and formats.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center staggered-grid">
+          <!-- beginner -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card h-100">
+              <div class="premium-card-body d-flex flex-column">
+                <span class="badge bg-success-subtle text-success border border-success-subtle align-self-start mb-3">Beginner</span>
+                <h4 class="mb-3">Beginner Cycling Basics</h4>
+                <p class="text-muted small flex-grow-1 mb-4">Learn basic group road signals, cadences, brake modulation, and road safety regulations. Ideal for new road cyclists.</p>
+                <div class="border-top pt-3 d-flex justify-content-between text-muted small">
+                  <span>Duration: <strong>4 Weeks</strong></span>
+                  <span>Schedule: <strong>Tue/Sat</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fitness -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card h-100">
+              <div class="premium-card-body d-flex flex-column">
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle align-self-start mb-3">Fitness</span>
+                <h4 class="mb-3">Fitness & Stamina Riding</h4>
+                <p class="text-muted small flex-grow-1 mb-4">Improve aerobic threshold (Zone 2) base stamina. Dynamic interval setups designed to build climbing confidence.</p>
+                <div class="border-top pt-3 d-flex justify-content-between text-muted small">
+                  <span>Duration: <strong>6 Weeks</strong></span>
+                  <span>Schedule: <strong>Wed/Sun</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Road Racing -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card h-100">
+              <div class="premium-card-body d-flex flex-column">
+                <span class="badge bg-danger-subtle text-danger border border-danger-subtle align-self-start mb-3">Race Prep</span>
+                <h4 class="mb-3">Crit & Road Race Pace</h4>
+                <p class="text-muted small flex-grow-1 mb-4">Advanced draft line rotations, high-speed cornering control, sprinting intervals, and group tactical drills.</p>
+                <div class="border-top pt-3 d-flex justify-content-between text-muted small">
+                  <span>Duration: <strong>12 Weeks</strong></span>
+                  <span>Schedule: <strong>Thu/Sat</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MTB Skills -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card h-100">
+              <div class="premium-card-body d-flex flex-column">
+                <span class="badge bg-warning-subtle text-warning border border-warning-subtle align-self-start mb-3">MTB Skills</span>
+                <h4 class="mb-3">MTB Trail Progression</h4>
+                <p class="text-muted small flex-grow-1 mb-4">Master trail weight shifting, singletrack drops, root garden hops, and ascending traction tricks.</p>
+                <div class="border-top pt-3 d-flex justify-content-between text-muted small">
+                  <span>Duration: <strong>6 Weeks</strong></span>
+                  <span>Schedule: <strong>Fri/Sat</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Endurance -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card h-100">
+              <div class="premium-card-body d-flex flex-column">
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle align-self-start mb-3">Endurance</span>
+                <h4 class="mb-3">Gran Fondo Endurance Base</h4>
+                <p class="text-muted small flex-grow-1 mb-4">Prepare for metric or imperial centuries. Focuses on nutritional planning, pacing, and recovery loops.</p>
+                <div class="border-top pt-3 d-flex justify-content-between text-muted small">
+                  <span>Duration: <strong>8 Weeks</strong></span>
+                  <span>Schedule: <strong>Thu/Sun</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kids Cycling -->
+          <div class="col-lg-4 col-md-6 staggered-item">
+            <div class="premium-card tilt-card h-100">
+              <div class="premium-card-body d-flex flex-column">
+                <span class="badge bg-success-subtle text-success border border-success-subtle align-self-start mb-3">Kids</span>
+                <h4 class="mb-3">Youth Safety & Skills</h4>
+                <p class="text-muted small flex-grow-1 mb-4">Closed-circuit sessions focusing on bike handling, basic signaling, and fun cycling safety games.</p>
+                <div class="border-top pt-3 d-flex justify-content-between text-muted small">
+                  <span>Duration: <strong>4 Weeks</strong></span>
+                  <span>Schedule: <strong>Sat Morning</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly Schedule Grid -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container text-start">
+        <h3 class="mb-4 text-center">Coaching Weekly Schedule</h3>
+        <div class="table-responsive glass-panel p-4 border-0">
+          <table class="table align-middle">
+            <thead>
+              <tr class="text-muted small">
+                <th scope="col">Time</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Saturday</th>
+                <th scope="col">Sunday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>06:00 - 08:00</strong></td>
+                <td><span class="text-success font-weight-550">Beginner Coffee Spin</span></td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><strong>08:00 - 10:30</strong></td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><span class="text-warning font-weight-550">Kids Safety Clinic</span></td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><strong>09:00 - 13:00</strong></td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><span class="text-primary font-weight-550">MTB Trail Skills</span></td>
+                <td><span class="text-success font-weight-550">Endurance Base Spin</span></td>
+              </tr>
+              <tr>
+                <td><strong>18:30 - 20:30</strong></td>
+                <td>-</td>
+                <td><span class="text-primary font-weight-550">Fitness Stamina</span></td>
+                <td><span class="text-danger font-weight-550">Crit Pace Drills</span></td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Modules -->
+    <section class="py-5 my-md-4">
+      <div class="container text-start">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h3 class="display-6">Core Performance Modules</h3>
+          <p class="text-muted small">Our programs combine in-saddle rides with theory modules to target performance holistically.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-panel p-4 border-0 h-100">
+              <h5 class="text-primary mb-3">Module 01: Fueling & Nutrition</h5>
+              <p class="text-muted small mb-0">Learn carbohydrate replenishment rates, electrolyte balance protocols, hydration requirements during long, high-elevation climbs, and post-ride protein recovery window principles.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-panel p-4 border-0 h-100">
+              <h5 class="text-primary mb-3">Module 02: Draft Line Mechanics</h5>
+              <p class="text-muted small mb-0">Understand wind tunnel drafting dynamics, rotating pace-lines (single vs double), safe positioning margins, front-rider duties, and emergency braking communication.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="glass-panel p-4 border-0 h-100">
+              <h5 class="text-primary mb-3">Module 03: Data-Metric Analysis</h5>
+              <p class="text-muted small mb-0">Introduction to FTP testing, normalized power, heart rate variability, training stress score (TSS) tracking, and custom target zones for training optimization.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress Tracking Demo Component -->
+    <section class="py-5 bg-dark text-white">
+      <div class="container text-start">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5" data-aos="fade-right">
+            <span class="text-primary text-uppercase font-weight-550">Metrics That Matter</span>
+            <h3 class="display-6 mt-2 mb-3">Track Your Cycling Progress</h3>
+            <p class="text-light opacity-75 small mb-4">Every membership plan connects to our metrics database, tracking your FTP growth, total ascent, and weekly aerobic goals automatically.</p>
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <i data-lucide="check-square" class="text-primary"></i>
+              <span class="text-light small">Weekly FTP check-ins and performance curves.</span>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <i data-lucide="check-square" class="text-primary"></i>
+              <span class="text-light small">Structured workout sync with Garmin & Wahoo units.</span>
+            </div>
+          </div>
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="glass-panel p-4 border-0 text-white" style="background: rgba(255, 255, 255, 0.05);">
+              <h5 class="mb-4">FTP Progression Simulation (8-Week block)</h5>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1 small text-light">
+                  <span>Week 01: Baseline check</span>
+                  <span>210 Watts</span>
+                </div>
+                <div class="progress bg-secondary" style="height: 10px;">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1 small text-light">
+                  <span>Week 04: Zone 2 Stamina block</span>
+                  <span>228 Watts</span>
+                </div>
+                <div class="progress bg-secondary" style="height: 10px;">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-0">
+                <div class="d-flex justify-content-between mb-1 small text-light">
+                  <span>Week 08: Post-Interval Peak check</span>
+                  <span>252 Watts (+20% Growth)</span>
+                </div>
+                <div class="progress bg-secondary" style="height: 10px;">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UCI & Club Race Calendar -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container text-start">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="text-primary text-uppercase font-weight-550">Competition</span>
+          <h2 class="display-5 mt-2 mb-3">UCI-Sanctioned & Club Race Series</h2>
+          <p class="section-subtitle text-muted mx-auto" style="max-width: 600px;">Test your limits. Review our official club races, criterium cups, and mountain time trials. Professional timing chips provided.</p>
+        </div>
+
+        <div class="table-responsive glass-panel p-4 border-0" data-aos="fade-up">
+          <table class="table align-middle mb-0 text-start">
+            <thead>
+              <tr class="text-muted small">
+                <th scope="col">Race / Championship Event</th>
+                <th scope="col">Date</th>
+                <th scope="col">Type</th>
+                <th scope="col">Rating / License</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="text-end">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>VeloMax Criterium Championship</strong></td>
+                <td>July 18, 2026</td>
+                <td><span class="badge bg-danger-subtle text-danger font-weight-520">Criterium (Closed loop)</span></td>
+                <td>UCI Cat 2 / Local Class</td>
+                <td><span class="text-success small">Open (9 slots left)</span></td>
+                <td class="text-end"><a href="#enroll-notes" onclick="document.getElementById('enroll-notes').value='Registration request for: VeloMax Criterium Championship (July 18, 2026)'; document.getElementById('program-select').value='race';" class="btn btn-premium btn-sm">Register Race</a></td>
+              </tr>
+              <tr>
+                <td><strong>Apex Pass Mountain Time Trial</strong></td>
+                <td>August 09, 2026</td>
+                <td><span class="badge bg-warning-subtle text-warning font-weight-520">Hill Climb (Time Trial)</span></td>
+                <td>Club Championship</td>
+                <td><span class="text-success small">Open (15 slots open)</span></td>
+                <td class="text-end"><a href="#enroll-notes" onclick="document.getElementById('enroll-notes').value='Registration request for: Apex Pass Mountain Time Trial (August 09, 2026)'; document.getElementById('program-select').value='endurance';" class="btn btn-premium btn-sm">Register Race</a></td>
+              </tr>
+              <tr>
+                <td><strong>Coastal Highway Road Race</strong></td>
+                <td>September 05, 2026</td>
+                <td><span class="badge bg-primary-subtle text-primary font-weight-520">Road Race (120km)</span></td>
+                <td>USAC-Rated Cat 4/5</td>
+                <td><span class="text-warning small">Filling fast (2 slots left)</span></td>
+                <td class="text-end"><a href="#enroll-notes" onclick="document.getElementById('enroll-notes').value='Registration request for: Coastal Highway Road Race (September 05, 2026)'; document.getElementById('program-select').value='race';" class="btn btn-premium btn-sm">Register Race</a></td>
+              </tr>
+              <tr>
+                <td><strong>Red Rock Enduro Cup</strong></td>
+                <td>October 12, 2026</td>
+                <td><span class="badge bg-success-subtle text-success font-weight-520">MTB Enduro (4 stages)</span></td>
+                <td>Club Cup / Off-Road</td>
+                <td><span class="text-success small">Open</span></td>
+                <td class="text-end"><a href="#enroll-notes" onclick="document.getElementById('enroll-notes').value='Registration request for: Red Rock Enduro Cup (October 12, 2026)'; document.getElementById('program-select').value='mtb';" class="btn btn-premium btn-sm">Register Race</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training Registration Form -->
+    <section class="py-5 my-md-5">
+      <div class="container" style="max-width: 700px;">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="display-5">Enroll in Coaching Program</h2>
+          <p class="text-muted small">Choose your program and select a start date. Our lead coach will schedule a baseline call.</p>
+        </div>
+
+        <div class="glass-panel p-4 p-md-5 border-0 text-start" data-aos="fade-up">
+          <form class="premium-form">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="enroll-name" placeholder="John Doe" required>
+                  <label for="enroll-name">Full Name</label>
+                  <div class="invalid-feedback">Please enter your full name.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="enroll-email" placeholder="name@example.com" required>
+                  <label for="enroll-email">Email Address</label>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="program-select" aria-label="Select Coaching Program" required>
+                    <option value="" disabled selected>Choose program...</option>
+                    <option value="beginner">Beginner Cycling Basics</option>
+                    <option value="fitness">Fitness & Stamina Riding</option>
+                    <option value="race">Crit & Road Race Pace</option>
+                    <option value="mtb">MTB Trail Progression</option>
+                    <option value="endurance">Gran Fondo Endurance</option>
+                    <option value="youth">Youth Safety & Skills</option>
+                  </select>
+                  <label for="program-select">Select Program</label>
+                  <div class="invalid-feedback">Please select a program.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="date" class="form-control" id="enroll-date" required>
+                  <label for="enroll-date">Desired Start Date</label>
+                  <div class="invalid-feedback">Please pick a starting date.</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="enroll-notes" placeholder="Current baseline power, objectives, physical challenges..." style="height: 100px;"></textarea>
+                  <label for="enroll-notes">Goals & Relevant Physical History</label>
+                </div>
+              </div>
+              <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-premium w-100">Submit Enrollment Request</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="success-modal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel border-0 text-white" style="background: rgba(10, 14, 18, 0.95);">
+        <div class="modal-body text-center p-5">
+          <div class="bg-primary text-white rounded-circle p-3 d-inline-block mb-4">
+            <i data-lucide="check" class="w-12 h-12"></i>
+          </div>
+          <h3 class="mb-3">Enrollment Request Received!</h3>
+          <p class="text-light opacity-75 small">Thank you. Our coaching administration will contact you to perform your initial FTP check-in and establish your training zones.</p>
+          <button type="button" class="btn btn-premium mt-3" data-bs-dismiss="modal">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-start">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="footer-logo d-flex align-items-center text-decoration-none text-body mb-3" href="index.html">
+            <i data-lucide="bike" class="me-2 text-primary"></i>
+            <span>Velo</span>Max
+          </a>
+          <p class="text-muted small mb-4">VeloMax is an international premium cycling club and adventure tours operator, designing high-performance routes and community experiences since 2012.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+            <a href="#" class="social-icon" aria-label="Youtube"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"></path><polygon points="10 15 15 12 10 9"></polygon></svg></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link small mb-2">Club History</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Our Guides</a></li>
+            <li><a href="gallery.html" class="footer-link small mb-2">Photo Gallery</a></li>
+            <li><a href="contact.html" class="footer-link small mb-2">Support Center</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="mb-3">Cycling Tours</h5>
+          <ul class="list-unstyled">
+            <li><a href="tours.html" class="footer-link small mb-2">Road Climbing</a></li>
+            <li><a href="tours.html" class="footer-link start small mb-2">MTB Adventures</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Gravel Trails</a></li>
+            <li><a href="tours.html" class="footer-link small mb-2">Family Cruising</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="mb-3">Club Information</h5>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="map-pin" class="me-2 text-primary w-4 h-4"></i> 104 carbon drive, cycle city, CC 90210</p>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="phone" class="me-2 text-primary w-4 h-4"></i> +1 (555) 321-VELO</p>
+          <p class="text-muted small mb-2 d-flex align-items-center"><i data-lucide="mail" class="me-2 text-primary w-4 h-4"></i> info@velomaxcycling.com</p>
+          <p class="text-danger small mb-0 d-flex align-items-center"><i data-lucide="phone-call" class="me-2 text-danger w-4 h-4"></i> Emergency: +1 (555) 911-VELO</p>
+        </div>
+      </div>
+      <div class="border-top mt-5 pt-4 text-center">
+        <p class="text-muted small mb-0">&copy; 2026 VeloMax Cycling. All Rights Reserved. Designed by Antigravity.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Libraries CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>
