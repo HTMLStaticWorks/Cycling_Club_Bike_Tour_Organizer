@@ -669,6 +669,12 @@ footer {
   overflow: hidden;
   border-radius: var(--border-radius-md);
   margin-bottom: 24px;
+  aspect-ratio: 4 / 3; /* Enforce uniform card aspect ratio */
+}
+.gallery-trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .gallery-item-img {
   width: 100%;
@@ -970,5 +976,43 @@ body.page-reveal.revealed {
   0% { transform: translateY(0px) rotate(0deg); }
   100% { transform: translateY(30px) rotate(-8deg); }
 }
+
+/* Contact Page specific styles and visibility corrections */
+.form-floating > label {
+  color: var(--text-muted);
+}
+[data-bs-theme="dark"] .form-floating > label {
+  color: var(--text-muted) !important;
+}
+[data-bs-theme="dark"] .form-floating > .form-control:focus ~ label,
+[data-bs-theme="dark"] .form-floating > .form-control:not(:placeholder-shown) ~ label,
+[data-bs-theme="dark"] .form-floating > .form-select:focus ~ label,
+[data-bs-theme="dark"] .form-floating > .form-select ~ label {
+  color: var(--primary-color) !important;
+}
+
+/* SVG Map Variables resolution */
+.contact-map-svg path.map-coast {
+  stroke: var(--primary-color) !important;
+}
+.contact-map-svg path.map-mountain {
+  stroke: var(--text-color) !important;
+}
+.contact-map-svg path.map-highway {
+  stroke: var(--primary-color) !important;
+}
+.contact-map-svg circle.map-marker {
+  fill: var(--primary-color) !important;
+}
+.contact-map-svg circle.map-marker-pulse {
+  stroke: var(--primary-color) !important;
+}
+.contact-map-svg text.map-title {
+  fill: var(--text-color) !important;
+}
+.contact-map-svg text.map-label {
+  fill: var(--text-muted) !important;
+}
+
 
 

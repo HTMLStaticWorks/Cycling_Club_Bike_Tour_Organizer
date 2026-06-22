@@ -18,6 +18,204 @@
   
   <!-- Custom CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* ── Contact page overrides ── */
+    .contact-info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: 2rem;
+      height: 100%;
+      transition: var(--transition-smooth);
+    }
+    .contact-info-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(255,107,0,0.3);
+    }
+    .contact-info-card .icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,107,0,0.05));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .contact-info-card.emergency {
+      border-color: rgba(220,53,69,0.25);
+      background: color-mix(in srgb, var(--card-bg) 96%, #dc3545 4%);
+    }
+    .contact-info-card.emergency .icon-wrap {
+      background: linear-gradient(135deg, rgba(220,53,69,0.15), rgba(220,53,69,0.05));
+    }
+    .contact-info-card h4 {
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+    }
+    .contact-info-card p {
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    /* ── Contact form panel ── */
+    .contact-form-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: 2.5rem;
+    }
+    .contact-form-panel .form-control,
+    .contact-form-panel .form-select {
+      background: var(--bg-alt);
+      border: 1.5px solid var(--card-border);
+      color: var(--text-color);
+      border-radius: var(--border-radius-sm);
+      transition: var(--transition-smooth);
+    }
+    .contact-form-panel .form-control:focus,
+    .contact-form-panel .form-select:focus {
+      background: var(--bg-color);
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(255,107,0,0.15);
+      color: var(--text-color);
+    }
+    .contact-form-panel label {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .contact-form-panel .form-floating > label {
+      color: var(--text-muted);
+    }
+    .contact-form-panel .form-floating > .form-control:focus ~ label,
+    .contact-form-panel .form-floating > .form-control:not(:placeholder-shown) ~ label,
+    .contact-form-panel .form-floating > .form-select ~ label {
+      color: var(--primary-color);
+    }
+
+    /* ── Info sidebar ── */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .sidebar-block {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: 1.75rem;
+    }
+    .sidebar-block h5 {
+      color: var(--text-color);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--card-border);
+      font-size: 0.88rem;
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-row span { color: var(--text-muted); }
+    .hours-row strong { color: var(--text-color); }
+    .social-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .social-link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--card-border);
+      border-radius: 50px;
+      padding: 0.4rem 1rem;
+      font-size: 0.82rem;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: var(--transition-smooth);
+      font-weight: 500;
+    }
+    .social-link-pill:hover {
+      background: var(--primary-color);
+      color: #fff;
+      border-color: var(--primary-color);
+    }
+
+    /* ── Map ── */
+    .map-container {
+      background: var(--bg-alt);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      position: relative;
+      height: 220px;
+    }
+    .map-container svg { width: 100%; height: 100%; }
+    .map-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 50px;
+      padding: 4px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ── Detail list ── */
+    .detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .detail-item:last-child { border-bottom: none; }
+    .detail-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(255,107,0,0.12), rgba(255,107,0,0.04));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .detail-icon.danger {
+      background: linear-gradient(135deg, rgba(220,53,69,0.12), rgba(220,53,69,0.04));
+    }
+    .detail-text strong { color: var(--text-color); font-size: 0.88rem; display: block; margin-bottom: 2px; }
+    .detail-text span  { color: var(--text-muted); font-size: 0.82rem; }
+
+    /* ── Section intro ── */
+    .section-label {
+      color: var(--primary-color);
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
@@ -35,11 +233,8 @@
       <!-- Navigation Menu links (Desktop) -->
       <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
         <ul class="navbar-nav align-items-center me-4">
-          <!-- Multi-Home Toggle Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Home
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
             <ul class="dropdown-menu bg-body border-0 shadow-lg p-2" aria-labelledby="homeDropdown" style="border-radius: var(--border-radius-sm);">
               <li><a class="dropdown-item rounded py-2 small" href="index.html">Home 1: Classic Club</a></li>
               <li><a class="dropdown-item rounded py-2 small" href="index2.html">Home 2: Wilderness Tour</a></li>
@@ -89,7 +284,7 @@
       <a href="about.html" class="offcanvas-link">About</a>
       <a href="tours.html" class="offcanvas-link">Cycling Tours</a>
       <a href="membership.html" class="offcanvas-link">Club Membership</a>
-      <a href="training.html" class="offcanvas-link">Coaching & Training</a>
+      <a href="training.html" class="offcanvas-link">Coaching &amp; Training</a>
       <a href="gallery.html" class="offcanvas-link">Gallery</a>
       <a href="contact.html" class="offcanvas-link">Contact</a>
     </nav>
@@ -100,8 +295,10 @@
   </div>
 
   <main id="main-content">
-    
-    <!-- Hero Inner -->
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════ -->
     <section class="hero-section text-white d-flex align-items-center" style="min-height: 45vh;">
       <div class="hero-bg" style="background-image: url('assets/images/hero_mountain_biker.png');"></div>
       <div class="hero-overlay"></div>
@@ -110,62 +307,82 @@
           <div class="col-lg-8">
             <span class="badge bg-primary px-3 py-2 text-uppercase mb-3">Connect</span>
             <h1 class="display-3 mb-3 animate-split-text">Contact VeloMax</h1>
-            <p class="lead-text mb-0 text-light opacity-90">Have queries about tour levels, custom frames fitting, corporate events, or memberships? Get in touch with us.</p>
+            <p class="lead-text mb-0 text-light opacity-90">Have queries about tour levels, custom frame fitting, corporate events, or memberships? Get in touch with us anytime.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Support Contacts Info Cards Grid -->
-    <section class="py-5 my-md-4">
-      <div class="container text-start">
+    <!-- ═══════════════════════════════════════════
+         THREE INFO CARDS
+    ════════════════════════════════════════════ -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="display-6">How to Reach Us</h2>
+        </div>
         <div class="row g-4">
+
           <!-- Address -->
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="glass-panel p-4 h-100 border-0 shadow-sm text-start">
-              <div class="bg-primary-subtle text-primary p-3 rounded-4 d-inline-block mb-4">
-                <i data-lucide="map-pin" class="w-8 h-8"></i>
+          <div class="col-md-4">
+            <div class="contact-info-card">
+              <div class="icon-wrap">
+                <i data-lucide="map-pin" style="color: var(--primary-color); width:26px; height:26px;"></i>
               </div>
-              <h4 class="mb-2">Club Headquarters</h4>
-              <p class="text-muted small mb-0">104 carbon drive, cycle city, CC 90210. Open for coffee and gear check-ins.</p>
+              <h4>Club Headquarters</h4>
+              <p>104 Carbon Drive, Cycle City</p>
+              <p>CC 90210, United States</p>
+              <p style="margin-top:0.5rem;">Open for coffee &amp; gear check-ins daily.</p>
             </div>
           </div>
-          <!-- Phones -->
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="glass-panel p-4 h-100 border-0 shadow-sm text-start">
-              <div class="bg-primary-subtle text-primary p-3 rounded-4 d-inline-block mb-4">
-                <i data-lucide="phone" class="w-8 h-8"></i>
+
+          <!-- Phone -->
+          <div class="col-md-4">
+            <div class="contact-info-card">
+              <div class="icon-wrap">
+                <i data-lucide="phone" style="color: var(--primary-color); width:26px; height:26px;"></i>
               </div>
-              <h4 class="mb-2">Support Desk</h4>
-              <p class="text-muted small mb-1">Office: +1 (555) 321-VELO</p>
-              <p class="text-muted small mb-0">Hours: Mon-Fri, 08:00 - 18:00</p>
+              <h4>Support Desk</h4>
+              <p><strong style="color:var(--text-color);">+1 (555) 321-VELO</strong></p>
+              <p>Monday – Friday: 08:00 – 18:00</p>
+              <p>Saturday: 09:00 – 14:00</p>
+              <p><a href="mailto:info@velomaxcycling.com" style="color:var(--primary-color); text-decoration:none; font-weight:500;">info@velomaxcycling.com</a></p>
             </div>
           </div>
+
           <!-- Emergency -->
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="glass-panel p-4 h-100 border-0 shadow-sm text-start border border-danger-subtle bg-danger-subtle bg-opacity-10">
-              <div class="bg-danger-subtle text-danger p-3 rounded-4 d-inline-block mb-4">
-                <i data-lucide="phone-call" class="w-8 h-8"></i>
+          <div class="col-md-4">
+            <div class="contact-info-card emergency">
+              <div class="icon-wrap">
+                <i data-lucide="phone-call" style="color:#dc3545; width:26px; height:26px;"></i>
               </div>
-              <h4 class="mb-2 text-danger">Emergency Hotline</h4>
-              <p class="text-muted small mb-1">Direct: +1 (555) 911-VELO</p>
-              <p class="text-muted small mb-0">Monitored 24/7 during active club spins and tour expeditions.</p>
+              <h4 style="color:#dc3545;">Emergency Hotline</h4>
+              <p><strong style="color:#dc3545; font-size:1rem;">+1 (555) 911-VELO</strong></p>
+              <p>Monitored 24/7 during all active club spins and tour expeditions.</p>
+              <p style="margin-top:0.5rem; color:#dc3545; font-weight:500; font-size:0.82rem;">⚠ For on-trail emergencies only</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Two Columns: inquiry form & custom vector map -->
-    <section class="py-5 bg-light-subtle">
-      <div class="container text-start">
-        <div class="row g-5">
-          <!-- Contact Inquiry Form -->
-          <div class="col-lg-6" data-aos="fade-right">
-            <h3 class="mb-4">Submit Your Inquiry</h3>
-            <div class="glass-panel p-4 border-0">
-              <form class="premium-form">
+    <!-- ═══════════════════════════════════════════
+         FORM  +  SIDEBAR
+    ════════════════════════════════════════════ -->
+    <section class="py-5" style="background: var(--bg-alt);">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+
+          <!-- LEFT: Contact Form -->
+          <div class="col-lg-7">
+            <span class="section-label">Message Us</span>
+            <h2 class="mb-4" style="color: var(--text-color);">Submit Your Inquiry</h2>
+            <div class="contact-form-panel">
+              <form class="premium-form" id="contact-form" novalidate>
                 <div class="row g-3">
+
                   <div class="col-md-6">
                     <div class="form-floating">
                       <input type="text" class="form-control" id="contact-fname" placeholder="John" required>
@@ -173,6 +390,7 @@
                       <div class="invalid-feedback">Please enter your first name.</div>
                     </div>
                   </div>
+
                   <div class="col-md-6">
                     <div class="form-floating">
                       <input type="text" class="form-control" id="contact-lname" placeholder="Doe" required>
@@ -180,6 +398,7 @@
                       <div class="invalid-feedback">Please enter your last name.</div>
                     </div>
                   </div>
+
                   <div class="col-12">
                     <div class="form-floating">
                       <input type="email" class="form-control" id="contact-email" placeholder="name@example.com" required>
@@ -187,88 +406,227 @@
                       <div class="invalid-feedback">Please enter a valid email address.</div>
                     </div>
                   </div>
-                  <div class="col-12">
+
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="tel" class="form-control" id="contact-phone" placeholder="+1 555 000 0000">
+                      <label for="contact-phone">Phone (optional)</label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
                     <div class="form-floating">
                       <select class="form-select" id="inquiry-reason" aria-label="Reason for Inquiry" required>
-                        <option value="" disabled selected>Select an option...</option>
+                        <option value="" disabled selected>Select a topic...</option>
                         <option value="tour">Tour Booking Details</option>
                         <option value="membership">Membership Application</option>
                         <option value="coaching">Training Academy</option>
                         <option value="rental">Bike Fleet Rentals</option>
+                        <option value="corporate">Corporate Events</option>
                         <option value="general">General Support</option>
                       </select>
-                      <label for="inquiry-reason">Reason for inquiry</label>
+                      <label for="inquiry-reason">Reason for Inquiry</label>
                       <div class="invalid-feedback">Please select an inquiry topic.</div>
                     </div>
                   </div>
+
                   <div class="col-12">
                     <div class="form-floating">
-                      <textarea class="form-control" id="contact-message" placeholder="Write message..." style="height: 120px;" required></textarea>
+                      <textarea class="form-control" id="contact-message" placeholder="Write your message..." style="height: 130px;" required></textarea>
                       <label for="contact-message">Your Message</label>
-                      <div class="invalid-feedback">Please write your message query.</div>
+                      <div class="invalid-feedback">Please write your message.</div>
                     </div>
                   </div>
+
                   <div class="col-12">
-                    <button type="submit" class="btn btn-premium w-100">Send Inquiry</button>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" id="contact-agree" required>
+                      <label class="form-check-label small" for="contact-agree" style="color: var(--text-muted);">
+                        I agree to VeloMax's privacy policy and consent to being contacted regarding my inquiry.
+                      </label>
+                      <div class="invalid-feedback">You must agree before submitting.</div>
+                    </div>
                   </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-premium w-100 py-3" style="font-size:1rem;">
+                      <i data-lucide="send" style="width:18px;height:18px;" class="me-2"></i> Send Inquiry
+                    </button>
+                  </div>
+
                 </div>
               </form>
             </div>
           </div>
 
-          <!-- Custom Vector Map and Business Hours -->
-          <div class="col-lg-6 d-flex flex-column justify-content-between" data-aos="fade-left">
-            <div>
-              <h3 class="mb-4">Our Hub Location</h3>
-              <!-- custom SVG styled map visual mockup -->
-              <div class="glass-panel p-4 border-0 text-center mb-4 overflow-hidden" style="background-color: var(--bg-alt); position: relative; height: 300px;">
-                <svg viewBox="0 0 800 400" class="w-100 h-100" style="opacity: 0.85;">
-                  <!-- Grid patterns -->
-                  <defs>
-                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 107, 0, 0.04)" stroke-width="1"/>
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#grid)" />
-                  <!-- Coastal line -->
-                  <path d="M 0 350 Q 200 300 400 320 T 800 280" fill="none" stroke="var(--primary-color)" stroke-width="3" opacity="0.3"/>
-                  <!-- Mountain contours -->
-                  <path d="M 100 100 L 250 250 L 400 180 L 600 300" fill="none" stroke="var(--text-color)" stroke-dasharray="5,5" stroke-width="1.5" opacity="0.3" />
-                  <!-- Highway route -->
-                  <path d="M 50 380 Q 300 200 500 220 T 750 100" fill="none" stroke="var(--primary-color)" stroke-width="4" stroke-linecap="round" />
-                  <!-- Markers -->
-                  <circle cx="500" cy="220" r="10" fill="var(--primary-color)" />
-                  <circle cx="500" cy="220" r="20" fill="none" stroke="var(--primary-color)" stroke-width="2" opacity="0.5">
-                    <animate attributeName="r" values="10;25;10" dur="3s" repeatCount="indefinite" />
-                  </circle>
-                  <!-- Text descriptions -->
-                  <text x="500" y="190" font-family="Outfit" font-weight="600" fill="var(--text-color)" text-anchor="middle" font-size="16">VeloMax Club Hub</text>
-                  <text x="280" y="270" font-family="Plus Jakarta Sans" fill="var(--text-muted)" font-size="12">West Gate Hub start</text>
-                  <text x="700" y="80" font-family="Plus Jakarta Sans" fill="var(--text-muted)" font-size="12">Apex Summit loop</text>
-                </svg>
-                <div class="position-absolute bottom-0 start-0 m-3 px-3 py-1 bg-primary text-white rounded-5 small shadow">Mapped Loop view</div>
-              </div>
-            </div>
+          <!-- RIGHT: Sidebar -->
+          <div class="col-lg-5">
+            <div class="contact-sidebar">
 
-            <div class="glass-panel p-4 border-0">
-              <h5 class="mb-3">Business & Cafe Hours</h5>
-              <div class="d-flex justify-content-between border-bottom pb-2 mb-2 small text-muted">
-                <span>Monday - Friday</span>
-                <strong class="text-dark">07:00 - 19:00</strong>
+              <!-- Map mockup -->
+              <div class="sidebar-block" style="padding:0; overflow:hidden;">
+                <div class="map-container">
+                  <svg viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                      <pattern id="cmap-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                        <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,107,0,0.06)" stroke-width="1"/>
+                      </pattern>
+                      <radialGradient id="cmap-glow" cx="67%" cy="55%" r="25%">
+                        <stop offset="0%" stop-color="rgba(255,107,0,0.18)"/>
+                        <stop offset="100%" stop-color="rgba(255,107,0,0)"/>
+                      </radialGradient>
+                    </defs>
+                    <rect width="100%" height="100%" fill="var(--bg-alt)"/>
+                    <rect width="100%" height="100%" fill="url(#cmap-grid)"/>
+                    <rect width="100%" height="100%" fill="url(#cmap-glow)"/>
+                    <!-- roads -->
+                    <path d="M0 220 Q150 180 300 200 T600 160" fill="none" stroke="rgba(255,107,0,0.18)" stroke-width="8"/>
+                    <path d="M0 220 Q150 180 300 200 T600 160" fill="none" stroke="rgba(255,107,0,0.5)" stroke-width="2.5" stroke-dasharray="10,6"/>
+                    <path d="M80 300 Q200 160 400 180" fill="none" stroke="var(--card-border)" stroke-width="5"/>
+                    <path d="M300 0 L395 300" fill="none" stroke="var(--card-border)" stroke-width="4"/>
+                    <!-- location marker -->
+                    <circle cx="400" cy="185" r="18" fill="rgba(255,107,0,0.15)">
+                      <animate attributeName="r" values="12;22;12" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="400" cy="185" r="10" fill="var(--primary-color)"/>
+                    <circle cx="400" cy="185" r="5" fill="#fff"/>
+                    <!-- labels -->
+                    <text x="400" y="155" text-anchor="middle" font-family="Outfit" font-weight="600" font-size="13" fill="var(--text-color)">VeloMax HQ</text>
+                    <text x="160" y="250" font-family="Plus Jakarta Sans" font-size="10" fill="var(--text-muted)">West Gate Hub</text>
+                    <text x="430" y="100" font-family="Plus Jakarta Sans" font-size="10" fill="var(--text-muted)">Apex Summit</text>
+                  </svg>
+                  <div class="map-badge">📍 Carbon Drive, Cycle City</div>
+                </div>
               </div>
-              <div class="d-flex justify-content-between border-bottom pb-2 mb-2 small text-muted">
-                <span>Saturday</span>
-                <strong class="text-dark">06:00 - 17:00</strong>
+
+              <!-- Contact details -->
+              <div class="sidebar-block">
+                <h5><i data-lucide="info" style="width:18px;height:18px;color:var(--primary-color);"></i> Contact Details</h5>
+
+                <div class="detail-item">
+                  <div class="detail-icon">
+                    <i data-lucide="map-pin" style="width:18px;height:18px;color:var(--primary-color);"></i>
+                  </div>
+                  <div class="detail-text">
+                    <strong>Address</strong>
+                    <span>104 Carbon Drive, Cycle City, CC 90210</span>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="detail-icon">
+                    <i data-lucide="phone" style="width:18px;height:18px;color:var(--primary-color);"></i>
+                  </div>
+                  <div class="detail-text">
+                    <strong>Office</strong>
+                    <span>+1 (555) 321-VELO</span>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="detail-icon">
+                    <i data-lucide="mail" style="width:18px;height:18px;color:var(--primary-color);"></i>
+                  </div>
+                  <div class="detail-text">
+                    <strong>Email</strong>
+                    <span>info@velomaxcycling.com</span>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="detail-icon danger">
+                    <i data-lucide="phone-call" style="width:18px;height:18px;color:#dc3545;"></i>
+                  </div>
+                  <div class="detail-text">
+                    <strong style="color:#dc3545;">Emergency (24/7)</strong>
+                    <span>+1 (555) 911-VELO</span>
+                  </div>
+                </div>
               </div>
-              <div class="d-flex justify-content-between small text-muted">
-                <span>Sunday</span>
-                <strong class="text-dark">07:00 - 15:00</strong>
+
+              <!-- Business hours -->
+              <div class="sidebar-block">
+                <h5><i data-lucide="clock" style="width:18px;height:18px;color:var(--primary-color);"></i> Business &amp; Café Hours</h5>
+                <div class="hours-row">
+                  <span>Monday – Friday</span>
+                  <strong>07:00 – 19:00</strong>
+                </div>
+                <div class="hours-row">
+                  <span>Saturday</span>
+                  <strong>06:00 – 17:00</strong>
+                </div>
+                <div class="hours-row">
+                  <span>Sunday</span>
+                  <strong>07:00 – 15:00</strong>
+                </div>
+                <p class="small mt-3 mb-0" style="color:var(--text-muted);">
+                  <i data-lucide="info" style="width:13px;height:13px;"></i>
+                  Tour departure times may vary. Always confirm with your ride leader.
+                </p>
               </div>
+
+              <!-- Social -->
+              <div class="sidebar-block">
+                <h5><i data-lucide="share-2" style="width:18px;height:18px;color:var(--primary-color);"></i> Follow VeloMax</h5>
+                <div class="social-row">
+                  <a href="#" class="social-link-pill">📘 Facebook</a>
+                  <a href="#" class="social-link-pill">🐦 Twitter</a>
+                  <a href="#" class="social-link-pill">📸 Instagram</a>
+                  <a href="#" class="social-link-pill">▶️ YouTube</a>
+                  <a href="#" class="social-link-pill">💼 LinkedIn</a>
+                </div>
+              </div>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════════════
+         FAQ STRIP
+    ════════════════════════════════════════════ -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-label">Quick Answers</span>
+          <h2 class="display-6" style="color: var(--text-color);">Frequently Asked Questions</h2>
+        </div>
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <div class="contact-info-card" style="padding:1.5rem;">
+              <h5 style="color:var(--text-color); margin-bottom:0.5rem;">How do I book a cycling tour?</h5>
+              <p style="margin:0;">Visit our <a href="tours.html" style="color:var(--primary-color); font-weight:500;">Tours page</a>, select your category, and click "Book Tour". You can also submit an inquiry via this contact form.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="contact-info-card" style="padding:1.5rem;">
+              <h5 style="color:var(--text-color); margin-bottom:0.5rem;">Can I rent a bike without joining a tour?</h5>
+              <p style="margin:0;">Yes! We offer daily bike rentals from our HQ. Select "Bike Fleet Rentals" in the inquiry form or call the support desk directly.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="contact-info-card" style="padding:1.5rem;">
+              <h5 style="color:var(--text-color); margin-bottom:0.5rem;">What is the refund policy for tours?</h5>
+              <p style="margin:0;">Full refunds are available up to 14 days before the tour departure. Within 7 days, a 50% refund applies. Contact us for special circumstances.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="contact-info-card" style="padding:1.5rem;">
+              <h5 style="color:var(--text-color); margin-bottom:0.5rem;">Do you offer corporate event packages?</h5>
+              <p style="margin:0;">Absolutely. We design custom corporate cycling days, team retreats, and brand activations. Select "Corporate Events" in the inquiry form above.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Success Modal -->
@@ -298,10 +656,10 @@
           </a>
           <p class="text-muted small mb-4">VeloMax is an international premium cycling club and adventure tours operator, designing high-performance routes and community experiences since 2012.</p>
           <div class="social-links">
-            <a href="#" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-            <a href="#" class="social-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
-            <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
-            <a href="#" class="social-icon" aria-label="Youtube"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"></path><polygon points="10 15 15 12 10 9"></polygon></svg></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+            <a href="#" class="social-icon" aria-label="Youtube"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"></path><polygon points="10 15 15 12 10 9"></polygon></svg></a>
           </div>
         </div>
         <div class="col-6 col-lg-2">
@@ -331,7 +689,7 @@
         </div>
       </div>
       <div class="border-top mt-5 pt-4 text-center">
-        <p class="text-muted small mb-0">&copy; 2026 VeloMax Cycling. All Rights Reserved. | <a href="#" class="footer-legal-link small">Privacy Policy</a> | <a href="#" class="footer-legal-link small">Terms & Conditions</a></p>
+        <p class="text-muted small mb-0">&copy; 2026 VeloMax Cycling. All Rights Reserved. | <a href="#" class="footer-legal-link small">Privacy Policy</a> | <a href="#" class="footer-legal-link small">Terms &amp; Conditions</a></p>
       </div>
     </div>
   </footer>
@@ -347,5 +705,20 @@
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/animations.js"></script>
+
+  <script>
+    // Wire the contact form to the success modal
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!this.checkValidity()) {
+        this.classList.add('was-validated');
+        return;
+      }
+      const modal = new bootstrap.Modal(document.getElementById('success-modal'));
+      modal.show();
+      this.reset();
+      this.classList.remove('was-validated');
+    });
+  </script>
 </body>
 </html>
