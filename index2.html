@@ -153,16 +153,16 @@
 
       <!-- Mobile Right Utilities -->
       <div class="d-flex d-lg-none align-items-center gap-2">
-        <button id="hamburger-btn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="offcanvas-menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
         <button id="theme-toggle-mob" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
           <i data-lucide="moon"></i>
         </button>
         <button id="lang-toggle-mob" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
           <i data-lucide="arrow-right-left"></i>
+        </button>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="offcanvas-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
       </div>
     </div>
@@ -208,7 +208,7 @@
     <div class="container route-selector-box" id="booking-widget" data-aos="fade-up">
       <div class="glass-panel p-4 border-0 text-start shadow-lg" style="background: var(--nav-bg);">
         <form class="premium-form row g-3 align-items-end">
-          <div class="col-md-3">
+          <div class="col-lg-3 col-md-6">
             <label for="route-style" class="form-label small text-muted font-weight-550">Adventure Style</label>
             <select class="form-select" id="route-style" required>
               <option value="" disabled selected>Select style...</option>
@@ -218,7 +218,7 @@
               <option value="family">Green Valley Family Cruise</option>
             </select>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-3 col-md-6">
             <label for="route-diff" class="form-label small text-muted font-weight-550">Target Difficulty</label>
             <select class="form-select" id="route-diff" required>
               <option value="" disabled selected>Select level...</option>
@@ -228,7 +228,7 @@
               <option value="expert">Expert/Elite (Rugged summit)</option>
             </select>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-3 col-md-6">
             <label for="route-date" class="form-label small text-muted font-weight-550">Preferred Month</label>
             <select class="form-select" id="route-date" required>
               <option value="" disabled selected>Select month...</option>
@@ -237,7 +237,7 @@
               <option value="aug">August 2026</option>
             </select>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-3 col-md-6">
             <button type="submit" class="btn btn-premium w-100"><i data-lucide="search" class="me-2 w-4 h-4"></i> Check Departure Slots</button>
           </div>
         </form>

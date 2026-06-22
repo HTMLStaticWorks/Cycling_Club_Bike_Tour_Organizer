@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. ScrollTrigger Animations
     // --- Staggered Card Entrance Animations ---
-    const staggeredGrids = document.querySelectorAll('.staggered-grid, .row');
+    const staggeredGrids = document.querySelectorAll('.staggered-grid');
     staggeredGrids.forEach(grid => {
       // Find cards or items to stagger inside
       const items = grid.querySelectorAll('.staggered-item, .premium-card, .glass-panel, .timeline-item');
