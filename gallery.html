@@ -26,19 +26,19 @@
 
   <!-- Header Navigation -->
   <header class="navbar navbar-expand-lg sticky-top py-3">
-    <div class="container">
+    <div class="container d-flex align-items-center justify-content-between">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <i data-lucide="bike" class="me-2 text-primary"></i>
         <span>Velo</span>Max
       </a>
       
-      <!-- Navigation Menu links (Desktop) -->
-      <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
-        <ul class="navbar-nav align-items-center me-4">
+      <!-- Navigation Menu links (Desktop - Centered) -->
+      <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav align-items-center gap-2">
           <!-- Multi-Home Toggle Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Home
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home <i data-lucide="chevron-down" style="width: 14px; height: 14px; stroke-width: 2.5;"></i>
             </a>
             <ul class="dropdown-menu bg-body border-0 shadow-lg p-2" aria-labelledby="homeDropdown" style="border-radius: var(--border-radius-sm);">
               <li><a class="dropdown-item rounded py-2 small" href="index.html">Home 1: Classic Club</a></li>
@@ -52,15 +52,17 @@
           <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <div class="d-flex align-items-center gap-2">
-          <a href="membership.html" class="btn btn-premium">Join Club</a>
-          <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
-            <i data-lucide="moon"></i>
-          </button>
-          <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
-            <i data-lucide="arrow-right-left"></i>
-          </button>
-        </div>
+      </div>
+
+      <!-- Action items (Desktop Right - Theme and RTL icons first, CTA after) -->
+      <div class="d-none d-lg-flex align-items-center gap-2">
+        <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+          <i data-lucide="arrow-right-left"></i>
+        </button>
+        <a href="membership.html" class="btn btn-premium ms-2">Join Club</a>
       </div>
 
       <!-- Mobile Right Utilities -->
@@ -161,8 +163,8 @@
           <!-- Item 3 -->
           <div class="col-lg-4 col-md-6 gallery-item-wrapper" data-category="club" data-aos="zoom-in" data-aos-delay="200">
             <div class="gallery-item">
-              <a href="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=1200&q=80" class="gallery-trigger" aria-label="View Family road cycle ride photo in lightbox">
-                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=800&q=80" alt="Family ride on flat country lane" class="gallery-item-img img-fluid" loading="lazy">
+              <a href="https://cyclingzens.com/wp-content/uploads/2022/12/10.png" class="gallery-trigger" aria-label="View Family road cycle ride photo in lightbox">
+                <img src="https://cyclingzens.com/wp-content/uploads/2022/12/10.png" alt="Family ride on flat country lane" class="gallery-item-img img-fluid" loading="lazy">
                 <div class="gallery-item-overlay">
                   <h5 class="text-white mb-1">Green Valley Family Spin</h5>
                   <span class="text-primary small">Club Rides</span>
@@ -213,8 +215,8 @@
           <!-- Item 7 -->
           <div class="col-lg-4 col-md-6 gallery-item-wrapper" data-category="mountain" data-aos="zoom-in">
             <div class="gallery-item">
-              <a href="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&q=80" class="gallery-trigger" aria-label="View Gravel trail explore photo in lightbox">
-                <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80" alt="Gravel mountain pass loop trail" class="gallery-item-img img-fluid" loading="lazy">
+              <a href="https://trailbrakes.co.uk/sites/default/files/media-library/2025-11/stunning-scenery-loch-arklet.jpg" class="gallery-trigger" aria-label="View Gravel trail explore photo in lightbox">
+                <img src="https://trailbrakes.co.uk/sites/default/files/media-library/2025-11/stunning-scenery-loch-arklet.jpg" alt="Gravel mountain pass loop trail" class="gallery-item-img img-fluid" loading="lazy">
                 <div class="gallery-item-overlay">
                   <h5 class="text-white mb-1">Highland Gravel Ascent</h5>
                   <span class="text-primary small">Mountain Adventures</span>
@@ -226,8 +228,8 @@
           <!-- Item 8 -->
           <div class="col-lg-4 col-md-6 gallery-item-wrapper" data-category="club" data-aos="zoom-in" data-aos-delay="100">
             <div class="gallery-item">
-              <a href="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=1200&q=80" class="gallery-trigger" aria-label="View group ride on mountain pass photo in lightbox">
-                <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=800&q=80" alt="VeloMax group spin on Pyrenees mountain loops" class="gallery-item-img img-fluid" loading="lazy">
+              <a href="https://tse3.mm.bing.net/th/id/OIP.8XHY8wyNs5z3jFkmFbmN3QHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="gallery-trigger" aria-label="View group ride photo in lightbox">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.8XHY8wyNs5z3jFkmFbmN3QHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Group ride on scenic mountain pass" class="gallery-item-img img-fluid" loading="lazy">
                 <div class="gallery-item-overlay">
                   <h5 class="text-white mb-1">Pyrenees Group Spin</h5>
                   <span class="text-primary small">Club Rides</span>
@@ -317,6 +319,11 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top-btn" class="scroll-top-btn" aria-label="Scroll to Top" title="Scroll to Top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
   <!-- Custom JS -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
   <script src="assets/js/main.js"></script>

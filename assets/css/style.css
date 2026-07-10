@@ -201,6 +201,24 @@ small, caption, figcaption {
   color: var(--primary-color) !important;
 }
 
+/* Desktop Hover Dropdown Menu Effect */
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-item.dropdown .dropdown-menu {
+    display: block !important;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+}
+
+
 /* BUTTONS */
 .btn-premium {
   background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
@@ -348,6 +366,9 @@ small, caption, figcaption {
   padding-top: 100px;
   padding-bottom: 80px;
 }
+.hero-section h1 {
+  line-height: 0.9 !important;
+}
 .hero-bg {
   position: absolute;
   top: 0;
@@ -422,6 +443,7 @@ small, caption, figcaption {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  gap: 15px;
 }
 .premium-card-footer {
   margin-top: auto;
@@ -463,10 +485,6 @@ small, caption, figcaption {
 /* SHADOWS & PERSPECTIVES */
 .perspective-container {
   perspective: 1000px;
-}
-.tilt-card {
-  transform-style: preserve-3d;
-  transition: transform 0.1s ease;
 }
 
 /* TESTIMONIALS SLIDER */
@@ -888,18 +906,7 @@ body.page-reveal.revealed {
   transform: scale(1);
 }
 
-/* Advanced 3D Perspective Card Tilt */
-.tilt-card {
-  transform-style: preserve-3d;
-  perspective: 1200px;
-  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-}
-.tilt-card > * {
-  transform: translate3d(0, 0, 25px);
-}
-.tilt-card .premium-card-img-wrapper {
-  transform: translate3d(0, 0, 15px);
-}
+/* Advanced 3D Perspective Card Tilt (Disabled) */
 
 /* Card border glow effects */
 .premium-card.glow-border:hover {
@@ -1014,5 +1021,73 @@ body.page-reveal.revealed {
   fill: var(--text-muted) !important;
 }
 
+/* PREMIUM EVENTS LIST LAYOUT */
+.event-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+}
+.event-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 107, 0, 0.3) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+.date-badge {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #ff8c00 100%) !important;
+  min-width: 90px;
+}
+@media (max-width: 767.98px) {
+  .event-card .border-top {
+    border-color: var(--card-border) !important;
+  }
+}
+/* Clubhouse hours list helpers */
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 0.88rem;
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-row span { color: var(--text-muted); }
+.hours-row strong { color: var(--text-color); }
 
+/* Scroll to Top Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3), var(--shadow-md);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1040;
+}
+.scroll-top-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4), var(--shadow-lg);
+}
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
+/* Hide default bootstrap dropdown arrow */
+.dropdown-toggle::after {
+  display: none !important;
+}

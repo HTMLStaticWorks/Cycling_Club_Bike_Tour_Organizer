@@ -224,17 +224,20 @@
 
   <!-- Header Navigation -->
   <header class="navbar navbar-expand-lg sticky-top py-3">
-    <div class="container">
+    <div class="container d-flex align-items-center justify-content-between">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <i data-lucide="bike" class="me-2 text-primary"></i>
         <span>Velo</span>Max
       </a>
       
-      <!-- Navigation Menu links (Desktop) -->
-      <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
-        <ul class="navbar-nav align-items-center me-4">
+      <!-- Navigation Menu links (Desktop - Centered) -->
+      <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav align-items-center gap-2">
+          <!-- Multi-Home Toggle Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home <i data-lucide="chevron-down" style="width: 14px; height: 14px; stroke-width: 2.5;"></i>
+            </a>
             <ul class="dropdown-menu bg-body border-0 shadow-lg p-2" aria-labelledby="homeDropdown" style="border-radius: var(--border-radius-sm);">
               <li><a class="dropdown-item rounded py-2 small" href="index.html">Home 1: Classic Club</a></li>
               <li><a class="dropdown-item rounded py-2 small" href="index2.html">Home 2: Wilderness Tour</a></li>
@@ -247,15 +250,17 @@
           <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
         </ul>
-        <div class="d-flex align-items-center gap-2">
-          <a href="membership.html" class="btn btn-premium">Join Club</a>
-          <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
-            <i data-lucide="moon"></i>
-          </button>
-          <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
-            <i data-lucide="arrow-right-left"></i>
-          </button>
-        </div>
+      </div>
+
+      <!-- Action items (Desktop Right - Theme and RTL icons first, CTA after) -->
+      <div class="d-none d-lg-flex align-items-center gap-2">
+        <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+          <i data-lucide="arrow-right-left"></i>
+        </button>
+        <a href="membership.html" class="btn btn-premium ms-2">Join Club</a>
       </div>
 
       <!-- Mobile Right Utilities -->
@@ -463,42 +468,6 @@
           <div class="col-lg-5">
             <div class="contact-sidebar">
 
-              <!-- Map mockup -->
-              <div class="sidebar-block" style="padding:0; overflow:hidden;">
-                <div class="map-container">
-                  <svg viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice">
-                    <defs>
-                      <pattern id="cmap-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                        <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,107,0,0.06)" stroke-width="1"/>
-                      </pattern>
-                      <radialGradient id="cmap-glow" cx="67%" cy="55%" r="25%">
-                        <stop offset="0%" stop-color="rgba(255,107,0,0.18)"/>
-                        <stop offset="100%" stop-color="rgba(255,107,0,0)"/>
-                      </radialGradient>
-                    </defs>
-                    <rect width="100%" height="100%" fill="var(--bg-alt)"/>
-                    <rect width="100%" height="100%" fill="url(#cmap-grid)"/>
-                    <rect width="100%" height="100%" fill="url(#cmap-glow)"/>
-                    <!-- roads -->
-                    <path d="M0 220 Q150 180 300 200 T600 160" fill="none" stroke="rgba(255,107,0,0.18)" stroke-width="8"/>
-                    <path d="M0 220 Q150 180 300 200 T600 160" fill="none" stroke="rgba(255,107,0,0.5)" stroke-width="2.5" stroke-dasharray="10,6"/>
-                    <path d="M80 300 Q200 160 400 180" fill="none" stroke="var(--card-border)" stroke-width="5"/>
-                    <path d="M300 0 L395 300" fill="none" stroke="var(--card-border)" stroke-width="4"/>
-                    <!-- location marker -->
-                    <circle cx="400" cy="185" r="18" fill="rgba(255,107,0,0.15)">
-                      <animate attributeName="r" values="12;22;12" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="400" cy="185" r="10" fill="var(--primary-color)"/>
-                    <circle cx="400" cy="185" r="5" fill="#fff"/>
-                    <!-- labels -->
-                    <text x="400" y="155" text-anchor="middle" font-family="Outfit" font-weight="600" font-size="13" fill="var(--text-color)">VeloMax HQ</text>
-                    <text x="160" y="250" font-family="Plus Jakarta Sans" font-size="10" fill="var(--text-muted)">West Gate Hub</text>
-                    <text x="430" y="100" font-family="Plus Jakarta Sans" font-size="10" fill="var(--text-muted)">Apex Summit</text>
-                  </svg>
-                  <div class="map-badge">📍 Carbon Drive, Cycle City</div>
-                </div>
-              </div>
-
               <!-- Contact details -->
               <div class="sidebar-block">
                 <h5><i data-lucide="info" style="width:18px;height:18px;color:var(--primary-color);"></i> Contact Details</h5>
@@ -544,42 +513,97 @@
                 </div>
               </div>
 
-              <!-- Business hours -->
-              <div class="sidebar-block">
-                <h5><i data-lucide="clock" style="width:18px;height:18px;color:var(--primary-color);"></i> Business &amp; Café Hours</h5>
-                <div class="hours-row">
-                  <span>Monday – Friday</span>
-                  <strong>07:00 – 19:00</strong>
-                </div>
-                <div class="hours-row">
-                  <span>Saturday</span>
-                  <strong>06:00 – 17:00</strong>
-                </div>
-                <div class="hours-row">
-                  <span>Sunday</span>
-                  <strong>07:00 – 15:00</strong>
-                </div>
-                <p class="small mt-3 mb-0" style="color:var(--text-muted);">
-                  <i data-lucide="info" style="width:13px;height:13px;"></i>
-                  Tour departure times may vary. Always confirm with your ride leader.
-                </p>
-              </div>
-
               <!-- Social -->
               <div class="sidebar-block">
                 <h5><i data-lucide="share-2" style="width:18px;height:18px;color:var(--primary-color);"></i> Follow VeloMax</h5>
                 <div class="social-row">
-                  <a href="#" class="social-link-pill">📘 Facebook</a>
-                  <a href="#" class="social-link-pill">🐦 Twitter</a>
-                  <a href="#" class="social-link-pill">📸 Instagram</a>
-                  <a href="#" class="social-link-pill">▶️ YouTube</a>
-                  <a href="#" class="social-link-pill">💼 LinkedIn</a>
+                  <a href="#" class="social-link-pill"><i data-lucide="facebook" class="w-4 h-4 me-1"></i> Facebook</a>
+                  <a href="#" class="social-link-pill"><i data-lucide="twitter" class="w-4 h-4 me-1"></i> Twitter</a>
+                  <a href="#" class="social-link-pill"><i data-lucide="instagram" class="w-4 h-4 me-1"></i> Instagram</a>
+                  <a href="#" class="social-link-pill"><i data-lucide="youtube" class="w-4 h-4 me-1"></i> YouTube</a>
+                  <a href="#" class="social-link-pill"><i data-lucide="linkedin" class="w-4 h-4 me-1"></i> LinkedIn</a>
                 </div>
               </div>
 
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CLUBHOUSE LOCATION & HOURS (BOTTOM OF PAGE)
+    ════════════════════════════════════════════ -->
+    <section class="py-5 border-top" style="background: var(--bg-color);">
+      <div class="container" data-aos="fade-up">
+        <div class="row g-5 align-items-center">
+          
+          <!-- Left Column: Map mockup -->
+          <div class="col-lg-7">
+            <span class="section-label">Find Us</span>
+            <h3 class="mb-4" style="color: var(--text-color);">Clubhouse &amp; Headquarters</h3>
+            <div class="premium-card p-0 overflow-hidden" style="height: 350px;">
+              <div class="map-container h-100 w-100 position-relative">
+                <svg viewBox="0 0 600 300" class="w-100 h-100" preserveAspectRatio="xMidYMid slice" style="display: block;">
+                  <defs>
+                    <pattern id="cmap-grid2" width="30" height="30" patternUnits="userSpaceOnUse">
+                      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,107,0,0.06)" stroke-width="1"/>
+                    </pattern>
+                    <radialGradient id="cmap-glow2" cx="67%" cy="55%" r="25%">
+                      <stop offset="0%" stop-color="rgba(255,107,0,0.18)"/>
+                      <stop offset="100%" stop-color="rgba(255,107,0,0)"/>
+                    </radialGradient>
+                  </defs>
+                  <rect width="100%" height="100%" fill="var(--bg-alt)"/>
+                  <rect width="100%" height="100%" fill="url(#cmap-grid2)"/>
+                  <rect width="100%" height="100%" fill="url(#cmap-glow2)"/>
+                  <!-- roads -->
+                  <path d="M0 220 Q150 180 300 200 T600 160" fill="none" stroke="rgba(255,107,0,0.18)" stroke-width="8"/>
+                  <path d="M0 220 Q150 180 300 200 T600 160" fill="none" stroke="rgba(255,107,0,0.5)" stroke-width="2.5" stroke-dasharray="10,6"/>
+                  <path d="M80 300 Q200 160 400 180" fill="none" stroke="var(--card-border)" stroke-width="5"/>
+                  <path d="M300 0 L395 300" fill="none" stroke="var(--card-border)" stroke-width="4"/>
+                  <!-- location marker -->
+                  <circle cx="400" cy="185" r="18" fill="rgba(255,107,0,0.15)">
+                    <animate attributeName="r" values="12;22;12" dur="2.5s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="400" cy="185" r="10" fill="var(--primary-color)"/>
+                  <circle cx="400" cy="185" r="5" fill="#fff"/>
+                  <!-- labels -->
+                  <text x="400" y="155" text-anchor="middle" font-family="Outfit" font-weight="600" font-size="13" fill="var(--text-color)">VeloMax HQ</text>
+                  <text x="160" y="250" font-family="Plus Jakarta Sans" font-size="10" fill="var(--text-muted)">West Gate Hub</text>
+                  <text x="430" y="100" font-family="Plus Jakarta Sans" font-size="10" fill="var(--text-muted)">Apex Summit</text>
+                </svg>
+                <div class="map-badge" style="position: absolute; bottom: 20px; left: 20px; background: rgba(26,33,41,0.85); color: #fff; padding: 8px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(5px);">📍 104 Carbon Drive, Cycle City</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Column: Business & Café Hours -->
+          <div class="col-lg-5">
+            <span class="section-label">Clubhouse Hours</span>
+            <h3 class="mb-4" style="color: var(--text-color);">Business &amp; Café Hours</h3>
+            <p class="text-muted small mb-4">Drop by our headquarters for premium blends, gear adjustments, and route consults with our staff guides.</p>
+            <div class="premium-card p-4">
+              <div class="hours-row">
+                <span>Monday – Friday</span>
+                <strong>07:00 – 19:00</strong>
+              </div>
+              <div class="hours-row">
+                <span>Saturday</span>
+                <strong>06:00 – 17:00</strong>
+              </div>
+              <div class="hours-row">
+                <span>Sunday</span>
+                <strong>07:00 – 15:00</strong>
+              </div>
+              <p class="small mt-3 mb-0" style="color:var(--text-muted);">
+                <i data-lucide="info" style="width:13px;height:13px;" class="me-1"></i>
+                Pre-ride coffee is served 30 mins before all official departures.
+              </p>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
@@ -701,6 +725,11 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top-btn" class="scroll-top-btn" aria-label="Scroll to Top" title="Scroll to Top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
   <!-- Custom JS -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
   <script src="assets/js/main.js"></script>

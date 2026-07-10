@@ -83,14 +83,35 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScroll(); // Check on init
 
   // Active link handler on page load
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-link, .offcanvas-link');
+  let currentPath = window.location.pathname.split('/').pop();
+  if (!currentPath || currentPath === '/') {
+    currentPath = 'index.html';
+  }
+  
+  const navLinks = document.querySelectorAll('.nav-link, .dropdown-item, .offcanvas-link');
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPath) {
       link.classList.add('active');
     } else {
+      if (link.classList.contains('dropdown-toggle')) {
+        return; // handle toggles based on children below
+      }
       link.classList.remove('active');
+    }
+  });
+
+  // Ensure dropdown toggles are active if any child is active
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const hasActiveChild = dropdown.querySelector('.dropdown-item.active');
+    if (toggle) {
+      if (hasActiveChild) {
+        toggle.classList.add('active');
+      } else {
+        toggle.classList.remove('active');
+      }
     }
   });
 
@@ -290,4 +311,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Scroll to Top Button Logic
+  const scrollTopBtn = document.getElementById('scroll-top-btn');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 });

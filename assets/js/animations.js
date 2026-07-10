@@ -69,39 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Dynamic Typography reveals
     // --- Split Text Reveal Animation ---
     const textRevealElements = document.querySelectorAll('.animate-split-text');
-    textRevealElements.forEach(el => {
-      const text = el.textContent.trim();
-      el.textContent = '';
-      
-      const words = text.split(' ');
-      words.forEach((word, idx) => {
-        const wordSpan = document.createElement('span');
-        wordSpan.className = 'text-mask-wrapper';
-        wordSpan.style.display = 'inline-block';
-        wordSpan.style.whiteSpace = 'nowrap';
-        
-        for (let char of word) {
-          const charSpan = document.createElement('span');
-          charSpan.textContent = char;
-          charSpan.style.display = 'inline-block';
-          charSpan.classList.add('char-reveal', 'text-mask-content');
-          wordSpan.appendChild(charSpan);
-        }
-        
-        el.appendChild(wordSpan);
-        
-        if (idx < words.length - 1) {
-          const space = document.createTextNode(' ');
-          el.appendChild(space);
-        }
-      });
-      
-      const chars = el.querySelectorAll('.char-reveal');
-      gsap.fromTo(chars, 
-        { y: '100%', opacity: 0 }, 
-        { y: '0%', opacity: 1, duration: 1.0, stagger: 0.02, ease: 'power4.out', delay: 0.2 }
-      );
-    });
+    gsap.fromTo(textRevealElements, 
+      { y: 30, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.15 }
+    );
 
     // --- Heading Scroll Reveal Masking (For all Section Headings) ---
     const sectionHeadings = document.querySelectorAll('section h2.display-5, section h3.display-6');
@@ -157,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const staggeredGrids = document.querySelectorAll('.staggered-grid');
     staggeredGrids.forEach(grid => {
       // Find cards or items to stagger inside
-      const items = grid.querySelectorAll('.staggered-item, .premium-card, .glass-panel, .timeline-item');
+      const items = grid.querySelectorAll('.staggered-item, .timeline-item');
       if (items.length === 0) return;
       
       gsap.from(items, {
@@ -305,36 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Interactive 3D Mouse Perspective Card Tilt
-  const tiltCards = document.querySelectorAll('.tilt-card, .premium-card');
-  tiltCards.forEach(card => {
-    card.classList.add('tilt-card'); // ensure class is attached
-    
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const maxRotateX = 8;
-      const maxRotateY = 8;
-      
-      const rotateX = ((centerY - y) / centerY) * maxRotateX;
-      const rotateY = ((x - centerX) / centerX) * maxRotateY;
-      
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
-      
-      // Auto shadow depth adjustments based on tilt coordinates
-      card.style.boxShadow = `0 ${20 + rotateX * 2}px ${40 + Math.abs(rotateY) * 2}px rgba(0,0,0,0.15), var(--shadow-glow)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-      card.style.boxShadow = '';
-    });
-  });
+  // 6. Interactive 3D Mouse Perspective Card Tilt (Disabled)
 
   // 7. Click Ripple Triggers on Buttons
   const buttons = document.querySelectorAll('.btn-premium, .btn-premium-outline, button.btn');

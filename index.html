@@ -46,20 +46,20 @@
 
   <!-- Header Navigation -->
   <header class="navbar navbar-expand-lg sticky-top py-3">
-    <div class="container">
+    <div class="container d-flex align-items-center justify-content-between">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <i data-lucide="bike" class="me-2 text-primary"></i>
         <span>Velo</span>Max
       </a>
 
-      <!-- Navigation Menu links (Desktop) -->
-      <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
-        <ul class="navbar-nav align-items-center me-4">
+      <!-- Navigation Menu links (Desktop - Centered) -->
+      <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav align-items-center gap-2">
           <!-- Multi-Home Toggle Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              Home
+              Home <i data-lucide="chevron-down" style="width: 14px; height: 14px; stroke-width: 2.5;"></i>
             </a>
             <ul class="dropdown-menu bg-body border-0 shadow-lg p-2" aria-labelledby="homeDropdown"
               style="border-radius: var(--border-radius-sm);">
@@ -74,16 +74,18 @@
           <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <div class="d-flex align-items-center gap-2">
-          <a href="membership.html" class="btn btn-premium">Join Club</a>
-          <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
-            <i data-lucide="moon"></i>
-          </button>
-          <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)"
-            title="Toggle RTL/LTR">
-            <i data-lucide="arrow-right-left"></i>
-          </button>
-        </div>
+      </div>
+
+      <!-- Action items (Desktop Right - Theme and RTL icons first, CTA after) -->
+      <div class="d-none d-lg-flex align-items-center gap-2">
+        <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)"
+          title="Toggle RTL/LTR">
+          <i data-lucide="arrow-right-left"></i>
+        </button>
+        <a href="membership.html" class="btn btn-premium ms-2">Join Club</a>
       </div>
 
       <!-- Mobile Right Utilities -->
@@ -135,7 +137,7 @@
           <div class="col-lg-7 text-start">
             <span class="badge bg-primary px-3 py-2 text-uppercase mb-3 hero-reveal-fade">International Cycling
               Community</span>
-            <h1 class="display-3 mb-4 animate-split-text">Forge Your Path. Embrace The Ride.</h1>
+            <h1 class="display-3 mb-4 animate-split-text" style="line-height: 1.08 !important; letter-spacing: -0.02em;">Forge Your Path.<br class="d-none d-md-inline"> Embrace The Ride.</h1>
             <p class="lead-text mb-5 text-light opacity-90 hero-reveal-fade">Experience global award-winning cycling
               tours, professional coaching support, and a high-performance local network designed for riders seeking
               excellence.</p>
@@ -185,7 +187,7 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6" data-aos="fade-right">
             <div class="position-relative">
-              <img src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&q=80"
+              <img src="https://coachpav.com/wp-content/uploads/2024/01/DALL%C2%B7E-2024-01-02-07.53.11-A-diverse-group-of-cyclists-riding-together-on-a-picturesque-rural-road-surrounded-by-lush-greenery-and-rolling-hills.-The-scene-conveys-a-sense-of-c.png"
                 alt="VeloMax cyclists on route" class="img-fluid rounded-4 shadow-lg">
               <div
                 class="position-absolute bottom-0 end-0 bg-primary text-white p-4 rounded-4 translate-middle-y me-4 d-none d-sm-block shadow-lg">
@@ -315,7 +317,7 @@
           <div class="col-lg-4 col-md-6 staggered-item">
             <div class="premium-card tilt-card">
               <div class="premium-card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80"
+                <img src="https://i.redd.it/qsyf8heg8g2a1.jpg"
                   alt="Weekend Ride" class="premium-card-img">
                 <span
                   class="badge bg-dark text-white position-absolute top-0 end-0 m-3 px-3 py-2 font-weight-520">Gravel /
@@ -350,7 +352,7 @@
           <div class="col-lg-4 col-md-6 staggered-item">
             <div class="premium-card tilt-card">
               <div class="premium-card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=800&q=80"
+                <img src="https://cyclingzens.com/wp-content/uploads/2022/12/10.png"
                   alt="Family Cycling Tour" class="premium-card-img">
                 <span
                   class="badge bg-dark text-white position-absolute top-0 end-0 m-3 px-3 py-2 font-weight-520">Family
@@ -420,7 +422,7 @@
           <div class="col-lg-4 col-md-6 staggered-item">
             <div class="premium-card tilt-card">
               <div class="premium-card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&q=80"
+                <img src="https://www.uponarriving.com/wp-content/uploads/2025/06/Independence-Pass_1-1024x680.jpeg"
                   alt="Endurance Challenge" class="premium-card-img">
                 <span
                   class="badge bg-dark text-white position-absolute top-0 end-0 m-3 px-3 py-2 font-weight-520">Extreme</span>
@@ -622,7 +624,7 @@
           <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="premium-card">
               <div class="premium-card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=800&q=80"
+                <img src="https://tse1.mm.bing.net/th/id/OIP.AMKDs6oriNxtDqwINk8_RAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                   alt="Hybrid Bike Rental" class="premium-card-img">
               </div>
               <div class="premium-card-body text-start">
@@ -646,7 +648,7 @@
           <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="premium-card">
               <div class="premium-card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80"
+                <img src="https://hips.hearstapps.com/hmg-prod/images/giant-road-e-012-1527609590.jpg?crop=0.536xw:1.00xh;0.300xw,0&resize=640:*"
                   alt="E-Bike Rental" class="premium-card-img">
               </div>
               <div class="premium-card-body text-start">
@@ -683,55 +685,67 @@
             events, training modules, and social meetups.</p>
         </div>
 
-        <div class="timeline text-start">
+        <div class="events-list d-flex flex-column gap-3 text-start">
           <!-- Event 1 -->
-          <div class="timeline-item d-md-flex align-items-center" data-aos="fade-up">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="text-primary font-weight-550 small d-block mb-1">June 24, 2026</span>
-              <h4 class="mb-2">Summer Gran Fondo Warm-Up</h4>
-              <p class="text-muted small mb-3">A supportive 120km group ride checking our pace for the major summer Gran
-                Fondo. Structured support zones included.</p>
-              <div class="d-flex gap-3 text-muted small">
-                <span class="d-flex align-items-center"><i data-lucide="map-pin" class="w-4 h-4 me-1"></i> West Gate
-                  Hub</span>
-                <span class="d-flex align-items-center"><i data-lucide="activity" class="w-4 h-4 me-1 text-warning"></i>
-                  Advanced</span>
+          <div class="event-card d-md-flex align-items-center justify-content-between p-4 rounded-4 shadow-sm border" data-aos="fade-up">
+            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-4 flex-grow-1">
+              <!-- Date Block -->
+              <div class="date-badge text-center py-3 px-4 rounded-3 text-white d-flex flex-column justify-content-center align-items-center">
+                <span class="fs-3 fw-bold lh-1">24</span>
+                <span class="small text-uppercase fw-semibold tracking-wider">Jun</span>
               </div>
+              <!-- Info Details -->
+              <div class="flex-grow-1 pe-md-4">
+                <h4 class="mb-2">Summer Gran Fondo Warm-Up</h4>
+                <p class="text-muted small mb-0">A supportive 120km group ride checking our pace for the major summer Gran Fondo. Structured support zones included.</p>
+              </div>
+            </div>
+            <!-- Meta and level -->
+            <div class="d-flex flex-row flex-md-column align-items-center align-items-md-end gap-3 mt-3 mt-md-0 text-md-end text-muted small border-top border-md-top-0 pt-3 pt-md-0 w-100 w-md-auto" style="min-width: 200px;">
+              <span class="d-flex align-items-center"><i data-lucide="map-pin" class="w-4 h-4 me-1 text-primary"></i> West Gate Hub</span>
+              <span class="badge bg-warning-subtle text-warning border border-warning-subtle py-1 px-3">Advanced</span>
             </div>
           </div>
 
           <!-- Event 2 -->
-          <div class="timeline-item d-md-flex align-items-center" data-aos="fade-up">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="text-primary font-weight-550 small d-block mb-1">July 05, 2026</span>
-              <h4 class="mb-2">VeloMax MTB Skills Clinic</h4>
-              <p class="text-muted small mb-3">Practical trail workshop detailing descending braking controls, body
-                positioning, and rock garden navigation.</p>
-              <div class="d-flex gap-3 text-muted small">
-                <span class="d-flex align-items-center"><i data-lucide="map-pin" class="w-4 h-4 me-1"></i> Apex Mountain
-                  Lodge</span>
-                <span class="d-flex align-items-center"><i data-lucide="activity" class="w-4 h-4 me-1 text-success"></i>
-                  Intermediate</span>
+          <div class="event-card d-md-flex align-items-center justify-content-between p-4 rounded-4 shadow-sm border" data-aos="fade-up" data-aos-delay="100">
+            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-4 flex-grow-1">
+              <!-- Date Block -->
+              <div class="date-badge text-center py-3 px-4 rounded-3 text-white d-flex flex-column justify-content-center align-items-center">
+                <span class="fs-3 fw-bold lh-1">05</span>
+                <span class="small text-uppercase fw-semibold tracking-wider">Jul</span>
               </div>
+              <!-- Info Details -->
+              <div class="flex-grow-1 pe-md-4">
+                <h4 class="mb-2">VeloMax MTB Skills Clinic</h4>
+                <p class="text-muted small mb-0">Practical trail workshop detailing descending braking controls, body positioning, and rock garden navigation.</p>
+              </div>
+            </div>
+            <!-- Meta and level -->
+            <div class="d-flex flex-row flex-md-column align-items-center align-items-md-end gap-3 mt-3 mt-md-0 text-md-end text-muted small border-top border-md-top-0 pt-3 pt-md-0 w-100 w-md-auto" style="min-width: 200px;">
+              <span class="d-flex align-items-center"><i data-lucide="map-pin" class="w-4 h-4 me-1 text-primary"></i> Apex Mountain Lodge</span>
+              <span class="badge bg-success-subtle text-success border border-success-subtle py-1 px-3">Intermediate</span>
             </div>
           </div>
 
           <!-- Event 3 -->
-          <div class="timeline-item d-md-flex align-items-center" data-aos="fade-up">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="text-primary font-weight-550 small d-block mb-1">July 18, 2026</span>
-              <h4 class="mb-2">Kids Safety & Skills Ride</h4>
-              <p class="text-muted small mb-3">Fun, closed-course layout with fun cycling games to teach safety rules
-                and build hand-eye coordination.</p>
-              <div class="d-flex gap-3 text-muted small">
-                <span class="d-flex align-items-center"><i data-lucide="map-pin" class="w-4 h-4 me-1"></i> City Park
-                  Oval</span>
-                <span class="d-flex align-items-center"><i data-lucide="activity" class="w-4 h-4 me-1 text-success"></i>
-                  Beginner</span>
+          <div class="event-card d-md-flex align-items-center justify-content-between p-4 rounded-4 shadow-sm border" data-aos="fade-up" data-aos-delay="200">
+            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-4 flex-grow-1">
+              <!-- Date Block -->
+              <div class="date-badge text-center py-3 px-4 rounded-3 text-white d-flex flex-column justify-content-center align-items-center">
+                <span class="fs-3 fw-bold lh-1">18</span>
+                <span class="small text-uppercase fw-semibold tracking-wider">Jul</span>
               </div>
+              <!-- Info Details -->
+              <div class="flex-grow-1 pe-md-4">
+                <h4 class="mb-2">Kids Safety & Skills Ride</h4>
+                <p class="text-muted small mb-0">Fun, closed-course layout with fun cycling games to teach safety rules and build hand-eye coordination.</p>
+              </div>
+            </div>
+            <!-- Meta and level -->
+            <div class="d-flex flex-row flex-md-column align-items-center align-items-md-end gap-3 mt-3 mt-md-0 text-md-end text-muted small border-top border-md-top-0 pt-3 pt-md-0 w-100 w-md-auto" style="min-width: 200px;">
+              <span class="d-flex align-items-center"><i data-lucide="map-pin" class="w-4 h-4 me-1 text-primary"></i> City Park Oval</span>
+              <span class="badge bg-info-subtle text-info border border-info-subtle py-1 px-3">Beginner</span>
             </div>
           </div>
         </div>
@@ -1094,6 +1108,78 @@
       </div>
     </section>
 
+    <!-- Clubhouse & Café Section -->
+    <section class="py-5 bg-light-subtle border-top">
+      <div class="container text-start" data-aos="fade-up">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <span class="text-primary text-uppercase font-weight-550">Clubhouse &amp; Café</span>
+            <h2 class="display-5 mt-2 mb-3">The Hub of VeloMax Community</h2>
+            <p class="text-muted small mb-4">Every great ride begins and ends with coffee. Our club headquarters features a full-service espresso bar, professional mechanic workshop, and premium gear showroom. It's the perfect spot to discuss routes, share ride logs, or grab a recovery snack.</p>
+            
+            <div class="row g-3">
+              <div class="col-sm-4">
+                <div class="p-3 rounded-3 border bg-body" style="border-color: var(--card-border) !important;">
+                  <div class="bg-primary-subtle text-primary p-2 rounded-circle d-flex align-items-center justify-content-center mb-2" style="width: 36px; height: 36px;">
+                    <i data-lucide="coffee" class="w-4 h-4"></i>
+                  </div>
+                  <h6 class="mb-1 text-dark">Espresso Bar</h6>
+                  <span class="text-muted small">Specialty blends &amp; nutrition</span>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="p-3 rounded-3 border bg-body" style="border-color: var(--card-border) !important;">
+                  <div class="bg-primary-subtle text-primary p-2 rounded-circle d-flex align-items-center justify-content-center mb-2" style="width: 36px; height: 36px;">
+                    <i data-lucide="wrench" class="w-4 h-4"></i>
+                  </div>
+                  <h6 class="mb-1 text-dark">Bike Shop</h6>
+                  <span class="text-muted small">Mechanic service &amp; parts</span>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="p-3 rounded-3 border bg-body" style="border-color: var(--card-border) !important;">
+                  <div class="bg-primary-subtle text-primary p-2 rounded-circle d-flex align-items-center justify-content-center mb-2" style="width: 36px; height: 36px;">
+                    <i data-lucide="users" class="w-4 h-4"></i>
+                  </div>
+                  <h6 class="mb-1 text-dark">Social Hub</h6>
+                  <span class="text-muted small">Co-working &amp; route talks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="premium-card p-4 p-md-5">
+              <h3 class="h4 mb-4 d-flex align-items-center gap-2">
+                <i data-lucide="clock" class="text-primary w-5 h-5"></i> Clubhouse Hours
+              </h3>
+              <p class="text-muted small mb-4">Visit us daily at <strong>104 Carbon Drive, Cycle City</strong>. The espresso machine is warm and ready for you.</p>
+              
+              <div class="hours-list">
+                <div class="hours-row">
+                  <span>Monday – Friday</span>
+                  <strong>07:00 – 19:00</strong>
+                </div>
+                <div class="hours-row">
+                  <span>Saturday</span>
+                  <strong>06:00 – 17:00</strong>
+                </div>
+                <div class="hours-row">
+                  <span>Sunday (Club Ride Day)</span>
+                  <strong>07:00 – 15:00</strong>
+                </div>
+              </div>
+              
+              <div class="mt-4 p-3 rounded bg-light d-flex align-items-start gap-2">
+                <i data-lucide="info" class="text-primary w-5 h-5 mt-0.5 flex-shrink-0"></i>
+                <p class="small text-muted mb-0">Pre-ride coffee and hydration checks are open 30 minutes prior to all official morning departures.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Newsletter -->
     <section class="py-5 text-white position-relative overflow-hidden">
       <div class="position-absolute top-0 left-0 w-100 h-100 bg-dark z-n1"></div>
@@ -1224,6 +1310,11 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top-btn" class="scroll-top-btn" aria-label="Scroll to Top" title="Scroll to Top">
+    <i data-lucide="arrow-up"></i>
+  </button>
 
   <!-- Custom JS -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>

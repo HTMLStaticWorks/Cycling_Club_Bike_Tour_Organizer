@@ -96,9 +96,14 @@
       border-color: rgba(255,107,0,0.3);
     }
     .horizontal-tour-img {
-      height: 100%;
-      min-height: 250px;
+      height: 380px;
       object-fit: cover;
+      width: 100%;
+    }
+    @media (max-width: 991.98px) {
+      .horizontal-tour-img {
+        height: 250px;
+      }
     }
     .route-selector-box {
       margin-top: -60px;
@@ -114,19 +119,19 @@
 
   <!-- Header Navigation -->
   <header class="navbar navbar-expand-lg sticky-top py-3">
-    <div class="container">
+    <div class="container d-flex align-items-center justify-content-between">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <i data-lucide="bike" class="me-2 text-primary"></i>
         <span>Velo</span>Max
       </a>
       
-      <!-- Navigation Menu links (Desktop) -->
-      <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarNav">
-        <ul class="navbar-nav align-items-center me-4">
+      <!-- Navigation Menu links (Desktop - Centered) -->
+      <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav align-items-center gap-2">
           <!-- Multi-Home Toggle Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Home
+            <a class="nav-link dropdown-toggle active d-flex align-items-center gap-1" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home <i data-lucide="chevron-down" style="width: 14px; height: 14px; stroke-width: 2.5;"></i>
             </a>
             <ul class="dropdown-menu bg-body border-0 shadow-lg p-2" aria-labelledby="homeDropdown" style="border-radius: var(--border-radius-sm);">
               <li><a class="dropdown-item rounded py-2 small" href="index.html">Home 1: Classic Club</a></li>
@@ -140,15 +145,17 @@
           <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <div class="d-flex align-items-center gap-2">
-          <a href="membership.html" class="btn btn-premium">Join Club</a>
-          <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
-            <i data-lucide="moon"></i>
-          </button>
-          <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
-            <i data-lucide="arrow-right-left"></i>
-          </button>
-        </div>
+      </div>
+
+      <!-- Action items (Desktop Right - Theme and RTL icons first, CTA after) -->
+      <div class="d-none d-lg-flex align-items-center gap-2">
+        <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="lang-toggle" class="theme-switch-btn" aria-label="Toggle Layout Direction (RTL/LTR)" title="Toggle RTL/LTR">
+          <i data-lucide="arrow-right-left"></i>
+        </button>
+        <a href="membership.html" class="btn btn-premium ms-2">Join Club</a>
       </div>
 
       <!-- Mobile Right Utilities -->
@@ -195,7 +202,7 @@
       <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(15,45,55,0.4) 0%, rgba(10,14,18,0.92) 100%);"></div>
       <div class="container position-relative z-1 py-5">
         <span class="badge bg-primary px-3 py-2 text-uppercase mb-3 hero-reveal-fade">Off-Road & Gravel Expeditions</span>
-        <h1 class="display-2 mb-4 animate-split-text" style="max-width: 900px; margin: 0 auto;">Explore the Wilderness on Two Wheels</h1>
+        <h1 class="display-2 mb-4 animate-split-text" style="max-width: 900px; margin: 0 auto; line-height: 1.08 !important; letter-spacing: -0.02em;">Explore the Wilderness<br class="d-none d-md-inline"> on Two Wheels</h1>
         <p class="lead-text mb-5 text-light opacity-90 hero-reveal-fade" style="max-width: 700px; margin: 0 auto;">Curated gravel routes, high-performance mountain singletracks, and full logistics support for the ultimate adventure athlete.</p>
         <div class="d-flex gap-3 justify-content-center flex-wrap hero-reveal-fade">
           <a href="tours.html" class="btn btn-premium">Explore Wilderness Tours</a>
@@ -289,7 +296,7 @@
             <div class="horizontal-tour-card">
               <div class="row g-0 align-items-stretch">
                 <div class="col-lg-5 col-md-12">
-                  <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80" alt="Highland Gravel Route" class="horizontal-tour-img w-100">
+                  <img src="https://trailbrakes.co.uk/sites/default/files/media-library/2025-11/stunning-scenery-loch-arklet.jpg" alt="Highland Gravel Route" class="horizontal-tour-img w-100">
                 </div>
                 <div class="col-lg-7 col-md-12 p-4 p-md-5 d-flex flex-column">
                   <div class="d-flex justify-content-between mb-3">
@@ -419,32 +426,70 @@
             <h3 class="display-6 mt-2 mb-3">Altitude & Elevation Profile</h3>
             <p class="text-muted small mb-4">Every route maps elevation gains accurately. Below is the custom profile loop for the signature Apex Summit climb, reaching average gradients of 7.5%.</p>
             
-            <div class="d-flex align-items-center mb-3">
-              <i data-lucide="arrow-up-right" class="text-primary me-3"></i>
-              <span class="text-muted small">Maximum gradient points: 12% at km 14.</span>
-            </div>
-            <div class="d-flex align-items-center">
-              <i data-lucide="flag" class="text-primary me-3"></i>
-              <span class="text-muted small">Feed station stopovers: km 35 and km 68.</span>
+            <div class="row g-3">
+              <!-- Metric Item 1 -->
+              <div class="col-sm-6">
+                <div class="p-3 rounded-3 border bg-body" style="border-color: var(--card-border) !important;">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="bg-primary-subtle text-primary p-2 rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                      <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-muted small fw-medium">Max Gradient</span>
+                  </div>
+                  <h4 class="mb-1 text-primary fw-bold">12%</h4>
+                  <span class="text-muted small">Reached at km 14</span>
+                </div>
+              </div>
+              <!-- Metric Item 2 -->
+              <div class="col-sm-6">
+                <div class="p-3 rounded-3 border bg-body" style="border-color: var(--card-border) !important;">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="bg-primary-subtle text-primary p-2 rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                      <i data-lucide="flag" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-muted small fw-medium">Feed Stations</span>
+                  </div>
+                  <h4 class="mb-1 text-primary fw-bold">2 Stops</h4>
+                  <span class="text-muted small">At km 35 and km 68</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-lg-6" data-aos="fade-left">
             <div class="glass-panel p-4 border-0" style="background-color: var(--bg-color);">
               <svg viewBox="0 0 500 200" class="w-100" style="overflow: visible;">
+                <defs>
+                  <linearGradient id="elevation-gradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--primary-color)" stop-opacity="0.35"/>
+                    <stop offset="100%" stop-color="var(--primary-color)" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                
                 <!-- Grid vertical borders -->
-                <line x1="50" y1="20" x2="50" y2="170" stroke="var(--card-border)" stroke-width="1"/>
-                <line x1="150" y1="20" x2="150" y2="170" stroke="var(--card-border)" stroke-width="1"/>
-                <line x1="250" y1="20" x2="250" y2="170" stroke="var(--card-border)" stroke-width="1"/>
-                <line x1="350" y1="20" x2="350" y2="170" stroke="var(--card-border)" stroke-width="1"/>
-                <line x1="450" y1="20" x2="450" y2="170" stroke="var(--card-border)" stroke-width="1"/>
+                <line x1="50" y1="20" x2="50" y2="170" stroke="var(--card-border)" stroke-width="1" stroke-dasharray="4,4"/>
+                <line x1="150" y1="20" x2="150" y2="170" stroke="var(--card-border)" stroke-width="1" stroke-dasharray="4,4"/>
+                <line x1="250" y1="20" x2="250" y2="170" stroke="var(--card-border)" stroke-width="1" stroke-dasharray="4,4"/>
+                <line x1="350" y1="20" x2="350" y2="170" stroke="var(--card-border)" stroke-width="1" stroke-dasharray="4,4"/>
+                <line x1="450" y1="20" x2="450" y2="170" stroke="var(--card-border)" stroke-width="1" stroke-dasharray="4,4"/>
+
+                <!-- Grid horizontal borders -->
+                <line x1="50" y1="70" x2="450" y2="70" stroke="var(--card-border)" stroke-width="1" stroke-dasharray="4,4"/>
+                <line x1="50" y1="120" x2="450" y2="120" stroke="var(--card-border)" stroke-width="1" stroke-dasharray="4,4"/>
                 
                 <!-- Bottom axis line -->
                 <line x1="30" y1="170" x2="470" y2="170" stroke="var(--text-color)" stroke-width="1.5"/>
                 
+                <!-- Elevation Gradient Area Fill -->
+                <path d="M 50 170 Q 150 150 250 80 T 450 40 L 450 170 L 50 170 Z" fill="url(#elevation-gradient)"/>
+                
                 <!-- Elevation Curve -->
                 <path d="M 50 170 Q 150 150 250 80 T 450 40" fill="none" stroke="var(--primary-color)" stroke-width="4" stroke-linecap="round"/>
                 
-                <!-- Hovering indicator dot -->
+                <!-- Hovering indicator dot and pulse ring -->
+                <circle cx="250" cy="80" r="10" fill="var(--primary-color)" opacity="0.3">
+                  <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2s" repeatCount="indefinite" />
+                </circle>
                 <circle cx="250" cy="80" r="6" fill="var(--primary-color)" />
                 <line x1="250" y1="80" x2="250" y2="170" stroke="var(--primary-color)" stroke-width="1.5" stroke-dasharray="3,3"/>
                 
@@ -463,9 +508,8 @@
 
     <!-- Cinematic Video Preview Section -->
     <section class="py-5 text-white position-relative text-center overflow-hidden">
-      <div class="position-absolute top-0 left-0 w-100 h-100 bg-dark z-n1"></div>
-      <!-- Background zoom stock cycling trail representation -->
-      <div class="position-absolute top-0 left-0 w-100 h-100 opacity-25 z-n1" style="background-image: url('https://images.unsplash.com/photo-1544192240-4a34fed0104c?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;"></div>
+      <!-- Background Thumbnail Image with Gradient Overlay for Text Readability -->
+      <div class="position-absolute top-0 left-0 w-100 h-100 z-n1" style="background-image: linear-gradient(rgba(10, 14, 18, 0.55), rgba(10, 14, 18, 0.55)), url('https://images.unsplash.com/photo-1544192240-4a34fed0104c?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; opacity: 1;"></div>
       
       <div class="container position-relative z-1 py-5" data-aos="zoom-in">
         <div class="bg-primary text-white rounded-circle p-3 d-inline-flex mb-4 cursor-pointer" style="width: 80px; height: 80px; align-items: center; justify-content: center;" onclick="alert('Playing cinematic wilderness tour trailer...');">
@@ -473,6 +517,78 @@
         </div>
         <h3 class="display-5 mb-3">VeloMax: Pyrenees Trail Expeditions</h3>
         <p class="lead-text text-light opacity-75 mb-0" style="max-width: 650px; margin: 0 auto;">Watch our 3-minute cinematic video tour mapping off-road routes across France and Spain border trails.</p>
+      </div>
+    </section>
+
+    <!-- Clubhouse & Café Section -->
+    <section class="py-5 border-top">
+      <div class="container text-start" data-aos="fade-up">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <span class="text-primary text-uppercase font-weight-550">Clubhouse &amp; Café</span>
+            <h2 class="display-5 mt-2 mb-3">The Hub of VeloMax Community</h2>
+            <p class="text-muted small mb-4">Every great ride begins and ends with coffee. Our club headquarters features a full-service espresso bar, professional mechanic workshop, and premium gear showroom. It's the perfect spot to discuss routes, share ride logs, or grab a recovery snack.</p>
+            
+            <div class="row g-3">
+              <div class="col-sm-4">
+                <div class="p-3 rounded-3 border bg-body" style="border-color: var(--card-border) !important;">
+                  <div class="bg-primary-subtle text-primary p-2 rounded-circle d-flex align-items-center justify-content-center mb-2" style="width: 36px; height: 36px;">
+                    <i data-lucide="coffee" class="w-4 h-4"></i>
+                  </div>
+                  <h6 class="mb-1 text-dark">Espresso Bar</h6>
+                  <span class="text-muted small">Specialty blends &amp; nutrition</span>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="p-3 rounded-3 border bg-body" style="border-color: var(--card-border) !important;">
+                  <div class="bg-primary-subtle text-primary p-2 rounded-circle d-flex align-items-center justify-content-center mb-2" style="width: 36px; height: 36px;">
+                    <i data-lucide="wrench" class="w-4 h-4"></i>
+                  </div>
+                  <h6 class="mb-1 text-dark">Bike Shop</h6>
+                  <span class="text-muted small">Mechanic service &amp; parts</span>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="p-3 rounded-3 border bg-body" style="border-color: var(--card-border) !important;">
+                  <div class="bg-primary-subtle text-primary p-2 rounded-circle d-flex align-items-center justify-content-center mb-2" style="width: 36px; height: 36px;">
+                    <i data-lucide="users" class="w-4 h-4"></i>
+                  </div>
+                  <h6 class="mb-1 text-dark">Social Hub</h6>
+                  <span class="text-muted small">Co-working &amp; route talks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="premium-card p-4 p-md-5">
+              <h3 class="h4 mb-4 d-flex align-items-center gap-2">
+                <i data-lucide="clock" class="text-primary w-5 h-5"></i> Clubhouse Hours
+              </h3>
+              <p class="text-muted small mb-4">Visit us daily at <strong>104 Carbon Drive, Cycle City</strong>. The espresso machine is warm and ready for you.</p>
+              
+              <div class="hours-list">
+                <div class="hours-row">
+                  <span>Monday – Friday</span>
+                  <strong>07:00 – 19:00</strong>
+                </div>
+                <div class="hours-row">
+                  <span>Saturday</span>
+                  <strong>06:00 – 17:00</strong>
+                </div>
+                <div class="hours-row">
+                  <span>Sunday (Club Ride Day)</span>
+                  <strong>07:00 – 15:00</strong>
+                </div>
+              </div>
+              
+              <div class="mt-4 p-3 rounded bg-light d-flex align-items-start gap-2">
+                <i data-lucide="info" class="text-primary w-5 h-5 mt-0.5 flex-shrink-0"></i>
+                <p class="small text-muted mb-0">Pre-ride coffee and hydration checks are open 30 minutes prior to all official morning departures.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -647,6 +763,11 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top-btn" class="scroll-top-btn" aria-label="Scroll to Top" title="Scroll to Top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
   <!-- Custom JS -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
   <script src="assets/js/main.js"></script>
