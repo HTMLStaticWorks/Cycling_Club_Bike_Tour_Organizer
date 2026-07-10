@@ -1041,6 +1041,12 @@ body.page-reveal.revealed {
     border-color: var(--card-border) !important;
   }
 }
+@media (min-width: 768px) {
+  .border-md-top-0 {
+    border-top: 0 !important;
+  }
+}
+
 /* Clubhouse hours list helpers */
 .hours-row {
   display: flex;
@@ -1091,3 +1097,21 @@ body.page-reveal.revealed {
 .dropdown-toggle::after {
   display: none !important;
 }
+
+/* Newsletter input overrides for dark/light themes */
+.newsletter-input {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+.newsletter-input:hover,
+.newsletter-input:focus {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.25) !important;
+}
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
