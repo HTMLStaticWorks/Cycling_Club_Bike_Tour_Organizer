@@ -72,12 +72,21 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-color);
   color: var(--text-color);
-  overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
 }
 
 /* TYPOGRAPHY RULES (AS SPECIFIED BY USER) */
@@ -222,6 +231,7 @@ small, caption, figcaption {
     transform: translateY(8px);
     transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
   }
+}
 
 /* Dropdown Item Styling */
 .dropdown-item {
@@ -336,13 +346,15 @@ small, caption, figcaption {
   border-left: 1px solid var(--glass-border);
   box-shadow: var(--shadow-lg);
   z-index: 1090;
-  transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  visibility: hidden;
+  transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   padding: 100px 30px 40px;
   display: flex;
   flex-direction: column;
 }
 .offcanvas-menu.active {
   right: 0;
+  visibility: visible;
 }
 .offcanvas-overlay {
   position: fixed;
