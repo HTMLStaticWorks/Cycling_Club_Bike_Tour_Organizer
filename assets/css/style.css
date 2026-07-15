@@ -163,10 +163,12 @@ small, caption, figcaption {
   border-bottom: 1px solid var(--glass-border);
   transition: var(--transition-smooth);
   z-index: 1050;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
 }
 .navbar.scrolled {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
   box-shadow: var(--shadow-md);
 }
 
