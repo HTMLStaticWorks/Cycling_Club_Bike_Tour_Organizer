@@ -329,4 +329,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // YouTube Video Modal Control
+  const videoModalElement = document.getElementById('videoModal');
+  const videoPlayer = document.getElementById('videoPlayer');
+  if (videoModalElement && videoPlayer) {
+    videoModalElement.addEventListener('show.bs.modal', () => {
+      videoPlayer.setAttribute('src', 'https://www.youtube.com/embed/CFpIctK74gM?autoplay=1&rel=0');
+    });
+    videoModalElement.addEventListener('hide.bs.modal', () => {
+      videoPlayer.setAttribute('src', '');
+    });
+  }
 });

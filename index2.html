@@ -507,12 +507,12 @@
     </section>
 
     <!-- Cinematic Video Preview Section -->
-    <section class="py-5 text-white position-relative text-center overflow-hidden">
+    <section class="py-5 text-white position-relative z-1 text-center overflow-hidden">
       <!-- Background Thumbnail Image with Gradient Overlay for Text Readability -->
-      <div class="position-absolute top-0 left-0 w-100 h-100 z-n1" style="background-image: linear-gradient(rgba(10, 14, 18, 0.55), rgba(10, 14, 18, 0.55)), url('https://images.unsplash.com/photo-1544192240-4a34fed0104c?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; opacity: 1;"></div>
+      <div class="position-absolute top-0 start-0 w-100 h-100 z-n1" style="background-image: linear-gradient(rgba(10, 14, 18, 0.55), rgba(10, 14, 18, 0.55)), url('https://img.youtube.com/vi/CFpIctK74gM/maxresdefault.jpg'); background-size: cover; background-position: center top; opacity: 1;"></div>
       
       <div class="container position-relative z-1 py-5" data-aos="zoom-in">
-        <div class="bg-primary text-white rounded-circle p-3 d-inline-flex mb-4 cursor-pointer" style="width: 80px; height: 80px; align-items: center; justify-content: center;" onclick="alert('Playing cinematic wilderness tour trailer...');">
+        <div class="bg-primary text-white rounded-circle p-3 d-inline-flex mb-4 cursor-pointer" style="width: 80px; height: 80px; align-items: center; justify-content: center;" data-bs-toggle="modal" data-bs-target="#videoModal">
           <i data-lucide="play" class="w-8 h-8 fill-white ms-1"></i>
         </div>
         <h3 class="display-5 mb-3">VeloMax: Pyrenees Trail Expeditions</h3>
@@ -686,6 +686,23 @@
               </div>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-dark border-0">
+        <div class="modal-header border-0 pb-0 text-white d-flex justify-content-between align-items-center" style="padding: 1.5rem 1.5rem 0.5rem;">
+          <h4 class="modal-title m-0" id="videoModalLabel">VeloMax: Pyrenees Trail Expeditions</h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0" style="padding: 1.5rem !important;">
+          <div class="ratio ratio-16x9 rounded overflow-hidden">
+            <iframe id="videoPlayer" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </div>
